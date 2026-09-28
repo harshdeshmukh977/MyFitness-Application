@@ -1,0 +1,1416 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.fitness-goal-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #13211e;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(49, 201, 158, 0.11),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 92% 72%,
+      rgba(255, 135, 91, 0.10),
+      transparent 30%
+    ),
+    #ffffff;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.fg-background {
+  position: fixed;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  filter: blur(5px);
+
+  z-index: 0;
+}
+
+.fg-background-mint {
+  width: 360px;
+  height: 360px;
+
+  left: -180px;
+  top: 170px;
+
+  background:
+    rgba(53, 203, 160, 0.08);
+}
+
+.fg-background-orange {
+  width: 420px;
+  height: 420px;
+
+  right: -220px;
+  bottom: 100px;
+
+  background:
+    rgba(255, 137, 94, 0.08);
+}
+
+.fg-background-soft {
+  width: 260px;
+  height: 260px;
+
+  right: 25%;
+  top: -160px;
+
+  background:
+    rgba(54, 211, 153, 0.06);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.fg-header {
+  width: min(1380px, calc(100% - 80px));
+
+  min-height: 105px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  position: relative;
+
+  z-index: 5;
+
+  border-bottom:
+    1px solid rgba(20, 50, 45, 0.08);
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.fg-back-button {
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(20, 50, 45, 0.09);
+
+  background:
+    rgba(255, 255, 255, 0.85);
+
+  color: #172622;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.fg-back-button span {
+  font-size: 21px;
+
+  line-height: 1;
+}
+
+.fg-back-button:hover {
+  transform: translateX(-3px);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 22px
+    rgba(25, 70, 60, 0.10);
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.fg-brand {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+}
+
+.fg-logo {
+  width: 43px;
+  height: 43px;
+
+  object-fit: contain;
+}
+
+.fg-brand-details {
+  text-align: left;
+}
+
+.fg-brand-name {
+  font-size: 21px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.8px;
+
+  line-height: 1;
+}
+
+.fg-brand-name span {
+  color: #32c59b;
+}
+
+.fg-brand-subtitle {
+  margin-top: 5px;
+
+  color: #8b9794;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.fg-progress-area {
+  width: 220px;
+
+  justify-self: end;
+}
+
+.fg-progress-heading {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 9px;
+}
+
+.fg-progress-heading span {
+  color: #8c9996;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+.fg-progress-heading strong {
+  color: #162622;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.fg-progress-heading small {
+  color: #99a5a2;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.fg-progress-track {
+  width: 100%;
+
+  height: 5px;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background:
+    #edf2f0;
+}
+
+.fg-progress-fill {
+  width: 77.78%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #30c39a,
+      #55d5b2
+    );
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.fg-main {
+  width: min(1080px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding:
+    52px 0
+    38px;
+
+  flex: 1;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.fg-hero {
+  text-align: center;
+
+  max-width: 700px;
+
+  margin:
+    0 auto
+    40px;
+}
+
+.fg-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    8px 14px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(51, 197, 155, 0.10);
+
+  color: #24ad87;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+.fg-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #35c89e;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(53, 200, 158, 0.10);
+}
+
+.fg-hero h1 {
+  margin:
+    17px 0 11px;
+
+  font-size:
+    clamp(34px, 5vw, 52px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 900;
+}
+
+.fg-hero h1 span {
+  color: #32c59b;
+}
+
+.fg-hero p {
+  margin: 0;
+
+  color: #7d8986;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   GOALS GRID
+========================================================= */
+
+.fg-goals {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   GOAL CARD
+========================================================= */
+
+.fg-goal-card {
+  position: relative;
+
+  min-height: 225px;
+
+  padding: 23px;
+
+  text-align: left;
+
+  border-radius: 26px;
+
+  border:
+    1px solid
+    rgba(20, 50, 45, 0.07);
+
+  background:
+    rgba(255, 255, 255, 0.90);
+
+  box-shadow:
+    0 12px 35px
+    rgba(25, 70, 60, 0.065);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.fg-goal-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 150px;
+  height: 150px;
+
+  right: -75px;
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(52, 200, 157, 0.07);
+
+  transition:
+    transform 0.35s ease;
+}
+
+.fg-goal-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(50, 197, 155, 0.20);
+
+  box-shadow:
+    0 20px 45px
+    rgba(25, 70, 60, 0.11);
+}
+
+.fg-goal-card:hover::before {
+  transform: scale(1.3);
+}
+
+
+/* SELECTED */
+
+.fg-goal-card.fg-selected {
+  border:
+    2px solid #38c9a0;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #f4fcf9
+    );
+
+  box-shadow:
+    0 18px 42px
+    rgba(45, 195, 153, 0.15);
+}
+
+.fg-goal-card.fg-selected::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 25px;
+
+  pointer-events: none;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(50, 197, 155, 0.08);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.fg-card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+.fg-goal-icon {
+  width: 68px;
+  height: 68px;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 31px;
+
+  box-shadow:
+    0 8px 18px
+    rgba(20, 50, 45, 0.05);
+}
+
+.fg-goal-icon.mint {
+  background:
+    linear-gradient(
+      145deg,
+      #e5f9f2,
+      #f0fcf8
+    );
+}
+
+.fg-goal-icon.orange {
+  background:
+    linear-gradient(
+      145deg,
+      #fff0e8,
+      #fff7f3
+    );
+}
+
+.fg-card-number {
+  color: #bdc8c5;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   TAG
+========================================================= */
+
+.fg-goal-tag {
+  display: inline-block;
+
+  margin-top: 15px;
+
+  padding:
+    5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.3px;
+}
+
+.fg-goal-tag.mint {
+  color: #22ad86;
+
+  background:
+    rgba(50, 197, 155, 0.09);
+}
+
+.fg-goal-tag.orange {
+  color: #e4774f;
+
+  background:
+    rgba(255, 132, 89, 0.10);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.fg-goal-content {
+  margin-top: 11px;
+}
+
+.fg-goal-content h3 {
+  margin: 0 0 7px;
+
+  color: #172622;
+
+  font-size: 19px;
+
+  font-weight: 850;
+
+  letter-spacing: -0.3px;
+}
+
+.fg-goal-content p {
+  max-width: 430px;
+
+  margin: 0;
+
+  color: #7d8986;
+
+  font-size: 12px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.fg-card-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 17px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid
+    rgba(20, 50, 45, 0.06);
+}
+
+.fg-card-bottom > span {
+  color: #98a39f;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+.fg-selected .fg-card-bottom > span {
+  color: #26ad87;
+}
+
+
+/* =========================================================
+   RADIO
+========================================================= */
+
+.fg-radio {
+  width: 25px;
+  height: 25px;
+
+  border-radius: 50%;
+
+  border:
+    2px solid #dce5e2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  transition:
+    all 0.2s ease;
+}
+
+.fg-radio.checked {
+  border-color: #35c89e;
+
+  background: #35c89e;
+
+  box-shadow:
+    0 5px 14px
+    rgba(53, 200, 158, 0.25);
+}
+
+.fg-radio.checked span {
+  color: white;
+
+  font-size: 13px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+.fg-selection {
+  min-height: 82px;
+
+  margin-top: 22px;
+
+  padding:
+    14px 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-radius: 22px;
+
+  border:
+    1px solid
+    rgba(50, 197, 155, 0.08);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(229, 250, 242, 0.92),
+      rgba(255, 246, 240, 0.92)
+    );
+
+  opacity: 0.7;
+
+  transform: translateY(3px);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.fg-selection-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+.fg-selection-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+.fg-selection-icon {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: white;
+
+  color: #2abb91;
+
+  font-size: 22px;
+
+  box-shadow:
+    0 7px 18px
+    rgba(30, 80, 65, 0.07);
+}
+
+.fg-selection-text span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #899793;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.4px;
+}
+
+.fg-selection-text strong {
+  color: #192723;
+
+  font-size: 16px;
+
+  font-weight: 850;
+}
+
+.fg-selection-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  color: #24ae88;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+}
+
+.fg-selection-status span {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  background: #38c99f;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   CONTINUE
+========================================================= */
+
+.fg-continue {
+  width: 235px;
+  height: 58px;
+
+  margin:
+    25px auto 0;
+
+  padding:
+    6px 7px 6px 25px;
+
+  border: none;
+
+  border-radius: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  font-size: 13px;
+
+  font-weight: 850;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.fg-continue-active {
+  color: white;
+
+  background:
+    linear-gradient(
+      100deg,
+      #31c69b,
+      #4bd4ae
+    );
+
+  box-shadow:
+    0 13px 28px
+    rgba(48, 198, 155, 0.24);
+}
+
+.fg-continue-active:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 17px 32px
+    rgba(48, 198, 155, 0.31);
+}
+
+.fg-continue-disabled {
+  color: #9da9a6;
+
+  background: #edf2f0;
+
+  cursor: not-allowed;
+
+  opacity: 0.8;
+}
+
+.fg-continue-arrow {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: white;
+
+  color: #20ae87;
+
+  font-size: 20px;
+}
+
+.fg-continue-disabled .fg-continue-arrow {
+  color: #a9b4b1;
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.fg-note {
+  margin:
+    12px 0 0;
+
+  text-align: center;
+
+  color: #a0aaa7;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.fg-footer {
+  width: min(1380px, calc(100% - 80px));
+
+  min-height: 65px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 5;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  align-items: center;
+
+  border-top:
+    1px solid
+    rgba(20, 50, 45, 0.07);
+
+  color: #9ba6a3;
+
+  font-size: 9px;
+
+  font-weight: 850;
+
+  letter-spacing: 1.5px;
+}
+
+.fg-footer-left {
+  justify-self: start;
+}
+
+.fg-footer-center {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.fg-footer-center i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #b7c2bf;
+}
+
+.fg-footer-right {
+  justify-self: end;
+
+  color: #263732;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .fg-header {
+    width: calc(100% - 40px);
+
+    grid-template-columns:
+      auto
+      1fr
+      auto;
+
+    min-height: 90px;
+  }
+
+  .fg-brand {
+    justify-self: center;
+  }
+
+  .fg-progress-area {
+    width: 170px;
+  }
+
+  .fg-main {
+    width: calc(100% - 40px);
+
+    padding-top: 42px;
+  }
+
+  .fg-goals {
+    gap: 15px;
+  }
+
+  .fg-goal-card {
+    padding: 20px;
+  }
+
+  .fg-footer {
+    width: calc(100% - 40px);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .fitness-goal-page {
+    min-height: 100svh;
+  }
+
+  .fg-header {
+    width: calc(100% - 28px);
+
+    min-height: 78px;
+
+    grid-template-columns:
+      auto
+      1fr
+      auto;
+
+    column-gap: 10px;
+  }
+
+  .fg-back-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .fg-back-button span {
+    font-size: 18px;
+  }
+
+  .fg-logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .fg-brand {
+    gap: 8px;
+  }
+
+  .fg-brand-name {
+    font-size: 15px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .fg-brand-subtitle {
+    margin-top: 3px;
+
+    font-size: 5.5px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .fg-progress-area {
+    width: 82px;
+  }
+
+  .fg-progress-heading {
+    margin-bottom: 5px;
+  }
+
+  .fg-progress-heading span {
+    display: none;
+  }
+
+  .fg-progress-heading strong {
+    font-size: 10px;
+
+    margin-left: auto;
+  }
+
+  .fg-progress-heading small {
+    font-size: 8px;
+  }
+
+  .fg-progress-track {
+    height: 4px;
+  }
+
+
+  /* MAIN */
+
+  .fg-main {
+    width: calc(100% - 28px);
+
+    padding:
+      30px 0
+      22px;
+  }
+
+
+  /* HERO */
+
+  .fg-hero {
+    margin-bottom: 27px;
+  }
+
+  .fg-eyebrow {
+    padding: 7px 11px;
+
+    font-size: 7px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .fg-hero h1 {
+    margin-top: 14px;
+
+    font-size: 32px;
+
+    letter-spacing: -1.3px;
+  }
+
+  .fg-hero p {
+    font-size: 11px;
+
+    line-height: 1.65;
+  }
+
+
+  /* GRID */
+
+  .fg-goals {
+    grid-template-columns: 1fr;
+
+    gap: 13px;
+  }
+
+  .fg-goal-card {
+    min-height: 0;
+
+    padding: 17px;
+
+    border-radius: 20px;
+  }
+
+  .fg-goal-icon {
+    width: 57px;
+    height: 57px;
+
+    border-radius: 17px;
+
+    font-size: 27px;
+  }
+
+  .fg-card-number {
+    font-size: 8px;
+  }
+
+  .fg-goal-tag {
+    margin-top: 12px;
+
+    padding: 4px 8px;
+
+    font-size: 7px;
+  }
+
+  .fg-goal-content {
+    margin-top: 9px;
+  }
+
+  .fg-goal-content h3 {
+    font-size: 16px;
+
+    margin-bottom: 5px;
+  }
+
+  .fg-goal-content p {
+    font-size: 10.5px;
+
+    line-height: 1.55;
+  }
+
+  .fg-card-bottom {
+    margin-top: 13px;
+
+    padding-top: 11px;
+  }
+
+  .fg-card-bottom > span {
+    font-size: 8px;
+  }
+
+  .fg-radio {
+    width: 22px;
+    height: 22px;
+  }
+
+
+  /* SELECTION */
+
+  .fg-selection {
+    min-height: 70px;
+
+    margin-top: 16px;
+
+    padding:
+      11px 14px;
+
+    border-radius: 18px;
+  }
+
+  .fg-selection-left {
+    gap: 10px;
+  }
+
+  .fg-selection-icon {
+    width: 41px;
+    height: 41px;
+
+    border-radius: 13px;
+
+    font-size: 18px;
+  }
+
+  .fg-selection-text span {
+    font-size: 6.5px;
+
+    letter-spacing: 1px;
+  }
+
+  .fg-selection-text strong {
+    font-size: 13px;
+  }
+
+  .fg-selection-status {
+    font-size: 7px;
+  }
+
+  .fg-selection-status span {
+    width: 17px;
+    height: 17px;
+
+    font-size: 9px;
+  }
+
+
+  /* CONTINUE */
+
+  .fg-continue {
+    width: 210px;
+    height: 53px;
+
+    margin-top: 18px;
+
+    padding-left: 21px;
+
+    font-size: 11px;
+  }
+
+  .fg-continue-arrow {
+    width: 41px;
+    height: 41px;
+
+    font-size: 17px;
+  }
+
+  .fg-note {
+    font-size: 8px;
+
+    margin-top: 9px;
+  }
+
+
+  /* FOOTER */
+
+  .fg-footer {
+    width: calc(100% - 28px);
+
+    min-height: 48px;
+
+    font-size: 6.5px;
+
+    letter-spacing: 1px;
+  }
+
+  .fg-footer-center {
+    gap: 6px;
+  }
+
+  .fg-footer-right {
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .fg-brand-subtitle {
+    display: none;
+  }
+
+  .fg-brand-name {
+    font-size: 13px;
+  }
+
+  .fg-progress-area {
+    width: 70px;
+  }
+
+  .fg-hero h1 {
+    font-size: 29px;
+  }
+
+  .fg-goal-card {
+    padding: 15px;
+  }
+
+  .fg-goal-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .fg-footer-center {
+    display: none;
+  }
+
+  .fg-footer {
+    grid-template-columns:
+      1fr 1fr;
+  }
+}
