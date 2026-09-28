@@ -1,0 +1,636 @@
+* {
+  box-sizing: border-box;
+}
+
+.gender-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 0% 20%, rgba(52, 211, 153, 0.10), transparent 30%),
+    radial-gradient(circle at 100% 45%, rgba(251, 146, 60, 0.08), transparent 30%),
+    #f8faf9;
+  color: #0d201b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =====================================================
+   TOP NAVBAR
+===================================================== */
+
+.gender-navbar {
+  width: calc(100% - 28px);
+  max-width: 1420px;
+  height: 92px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(15, 40, 32, 0.08);
+}
+
+
+/* ---------- BRAND ---------- */
+
+.gender-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gender-logo {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.gender-brand-name {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.gender-brand-name span {
+  color: #32bd98;
+}
+
+.gender-brand-subtitle {
+  margin-top: 5px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #7a8883;
+}
+
+
+/* ---------- PROGRESS ---------- */
+
+.gender-progress {
+  width: 220px;
+}
+
+.gender-progress-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 9px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #697771;
+}
+
+.gender-progress-top strong {
+  color: #15251f;
+  font-size: 10px;
+}
+
+.gender-progress-track {
+  width: 100%;
+  height: 4px;
+  border-radius: 20px;
+  background: #dfe9e5;
+  overflow: hidden;
+}
+
+.gender-progress-active {
+  width: 44.44%;
+  height: 100%;
+  background: #42cda7;
+  border-radius: 20px;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.gender-content {
+  width: calc(100% - 28px);
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 42px 14px 32px;
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.gender-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 35px;
+}
+
+.gender-step {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #dcf8ef;
+  color: #21b88d;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.gender-eyebrow {
+  margin-bottom: 7px;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2px;
+
+  color: #20ae87;
+}
+
+.gender-heading h1 {
+  margin: 0;
+
+  font-size: clamp(30px, 3vw, 45px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.gender-heading p {
+  margin: 9px 0 0;
+
+  font-size: 12px;
+  color: #71807a;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.gender-section {
+  width: 100%;
+}
+
+.gender-section-title {
+  margin-bottom: 18px;
+}
+
+.gender-section-title span {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #87958f;
+}
+
+.gender-section-title h2 {
+  margin: 5px 0 4px;
+
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.gender-section-title p {
+  margin: 0;
+
+  font-size: 11px;
+  color: #78857f;
+}
+
+
+/* =====================================================
+   GENDER OPTIONS
+===================================================== */
+
+.gender-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gender-card {
+  position: relative;
+
+  min-height: 190px;
+  padding: 22px;
+
+  border: 1px solid rgba(20, 45, 36, 0.08);
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  text-align: left;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+
+  overflow: hidden;
+}
+
+.gender-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba(20, 70, 55, 0.08);
+
+  border-color: rgba(48, 193, 153, 0.35);
+}
+
+.gender-card.selected {
+  border: 2px solid #40cba4;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(225, 251, 242, 0.95),
+      rgba(255, 255, 255, 0.95)
+    );
+
+  box-shadow:
+    0 15px 35px rgba(40, 190, 150, 0.12);
+}
+
+
+/* ---------- CARD NUMBER ---------- */
+
+.gender-card-number {
+  position: absolute;
+  top: 15px;
+  left: 17px;
+
+  font-size: 9px;
+  font-weight: 900;
+  color: #9ba8a3;
+}
+
+
+/* ---------- ICON ---------- */
+
+.gender-icon {
+  width: 58px;
+  height: 58px;
+
+  margin-top: 13px;
+  margin-bottom: 15px;
+
+  border-radius: 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #e7f8f2;
+
+  color: #25b88f;
+
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.gender-card:nth-child(2) .gender-icon {
+  background: #fff0e9;
+  color: #ef916d;
+}
+
+
+/* ---------- CARD CONTENT ---------- */
+
+.gender-card-content h3 {
+  margin: 0 0 6px;
+
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.gender-card-content p {
+  max-width: 250px;
+
+  margin: 0;
+
+  font-size: 10px;
+  line-height: 1.5;
+
+  color: #75827d;
+}
+
+
+/* ---------- PLUS / CHECK ---------- */
+
+.gender-check {
+  position: absolute;
+
+  right: 18px;
+  bottom: 17px;
+
+  width: 31px;
+  height: 31px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eef5f2;
+
+  color: #63726c;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.gender-card.selected .gender-check {
+  background: #42cba5;
+  color: white;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.gender-info {
+  margin-top: 20px;
+
+  min-height: 65px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 12px 15px;
+
+  border: 1px solid rgba(35, 180, 140, 0.10);
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(233, 252, 246, 0.75),
+      rgba(255, 245, 238, 0.65)
+    );
+}
+
+.gender-info-icon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: white;
+
+  color: #37c29c;
+
+  font-size: 18px;
+}
+
+.gender-info strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  font-size: 10px;
+}
+
+.gender-info p {
+  margin: 0;
+
+  font-size: 9px;
+  color: #75817c;
+}
+
+
+/* =====================================================
+   NEXT STEP
+===================================================== */
+
+.gender-next {
+  margin-top: 15px;
+
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 16px;
+
+  border: 1px solid rgba(30, 180, 140, 0.10);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(235, 252, 247, 0.9),
+      rgba(255, 247, 241, 0.9)
+    );
+}
+
+.gender-next span {
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #87958f;
+}
+
+.gender-next h3 {
+  margin: 4px 0 3px;
+
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.gender-next p {
+  margin: 0;
+
+  font-size: 9px;
+  color: #78857f;
+}
+
+
+/* ---------- CONTINUE ---------- */
+
+.gender-continue {
+  min-width: 145px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 5px 7px 5px 18px;
+
+  border: none;
+  border-radius: 28px;
+
+  background: #39c6a0;
+
+  color: white;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.gender-continue:hover:not(.disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(40, 190, 150, 0.2);
+}
+
+.gender-continue div {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: white;
+  color: #17251f;
+
+  font-size: 18px;
+}
+
+.gender-continue.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .gender-options {
+    grid-template-columns: 1fr;
+  }
+
+  .gender-card {
+    min-height: 145px;
+  }
+
+  .gender-content {
+    padding-top: 30px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .gender-navbar {
+    height: 78px;
+  }
+
+  .gender-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .gender-brand-name {
+    font-size: 16px;
+  }
+
+  .gender-brand-subtitle {
+    font-size: 6px;
+  }
+
+  .gender-progress {
+    width: 125px;
+  }
+
+  .gender-progress-top {
+    font-size: 7px;
+  }
+
+  .gender-content {
+    width: 100%;
+    padding: 28px 15px 25px;
+  }
+
+  .gender-heading {
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  .gender-heading h1 {
+    font-size: 30px;
+  }
+
+  .gender-heading p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .gender-card {
+    min-height: 150px;
+    padding: 18px;
+  }
+
+  .gender-next {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .gender-continue {
+    min-width: 120px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 420px) {
+
+  .gender-progress {
+    width: 100px;
+  }
+
+  .gender-brand-text {
+    display: none;
+  }
+
+  .gender-heading h1 {
+    font-size: 27px;
+  }
+
+  .gender-next {
+    flex-direction: column;
+  }
+
+  .gender-continue {
+    width: 100%;
+  }
+
+}
