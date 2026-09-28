@@ -1,0 +1,835 @@
+/* =========================================================
+   WHAT'S NEXT PAGE
+========================================================= */
+
+.what-next-page {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #12231f;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8fffc 0%,
+      #fff9f3 52%,
+      #ffffff 100%
+    );
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+========================================================= */
+
+.wn-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wn-mint {
+  width: 330px;
+  height: 330px;
+
+  left: -140px;
+  top: 220px;
+
+  background: rgba(62, 210, 164, 0.18);
+}
+
+.wn-orange {
+  width: 350px;
+  height: 350px;
+
+  right: -160px;
+  bottom: 60px;
+
+  background: rgba(255, 117, 67, 0.16);
+}
+
+.wn-white {
+  width: 250px;
+  height: 250px;
+
+  right: 25%;
+  top: 10%;
+
+  background: rgba(255, 255, 255, 0.75);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.wn-header {
+  position: relative;
+  z-index: 5;
+
+  width: min(1180px, calc(100% - 50px));
+  margin: auto;
+
+  min-height: 92px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(18, 35, 31, 0.08);
+}
+
+
+/* BACK */
+
+.wn-back {
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid rgba(18, 35, 31, 0.12);
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  color: #12231f;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.wn-back:hover {
+  transform: translateX(-3px);
+  background: white;
+}
+
+
+/* BRAND */
+
+.wn-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-left: 30px;
+  margin-right: auto;
+}
+
+.wn-logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wn-logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+.wn-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.wn-brand-text strong {
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
+.wn-brand-text strong span {
+  color: #31b990;
+}
+
+.wn-brand-text small {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #7d8b87;
+}
+
+
+/* PROGRESS */
+
+.wn-progress {
+  width: 210px;
+}
+
+.wn-progress-top {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.wn-progress-top span {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #7b8884;
+}
+
+.wn-progress-top strong {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.wn-progress-track {
+  width: 100%;
+  height: 5px;
+
+  border-radius: 20px;
+
+  background: #e8ecea;
+
+  overflow: hidden;
+}
+
+.wn-progress-fill {
+  width: 66.66%;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #3ac49c,
+      #ff8055
+    );
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.wn-main {
+  position: relative;
+  z-index: 2;
+
+  width: min(760px, calc(100% - 35px));
+
+  margin: auto;
+
+  padding: 55px 0 80px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.wn-hero {
+  text-align: center;
+
+  margin-bottom: 35px;
+}
+
+.wn-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 2.5px;
+
+  color: #4d7770;
+}
+
+.wn-eyebrow span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #3cc69f;
+}
+
+.wn-hero h1 {
+  margin: 15px 0 12px;
+
+  font-size: clamp(40px, 6vw, 58px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+}
+
+.wn-hero h1 em {
+  font-style: normal;
+
+  color: #f36f48;
+}
+
+.wn-hero p {
+  max-width: 520px;
+
+  margin: auto;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: #71807b;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.wn-card {
+  position: relative;
+
+  padding: 32px;
+
+  border-radius: 30px;
+
+  background:
+    rgba(255, 255, 255, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 25px 70px rgba(39, 67, 59, 0.10),
+    0 4px 20px rgba(39, 67, 59, 0.05);
+
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+}
+
+.wn-card-glow {
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -100px;
+  top: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 128, 85, 0.10);
+
+  filter: blur(35px);
+}
+
+
+/* CARD TOP */
+
+.wn-card-top {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wn-card-label {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 9px;
+
+  letter-spacing: 1.8px;
+
+  font-weight: 800;
+
+  color: #81908b;
+}
+
+.wn-label-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #36bd95;
+}
+
+.wn-step {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #effaf6;
+
+  color: #29a982;
+
+  font-size: 13px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.wn-icon-wrapper {
+  position: relative;
+
+  width: 145px;
+  height: 145px;
+
+  margin: 30px auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wn-icon-ring {
+  position: absolute;
+
+  border-radius: 50%;
+
+  border: 1px dashed rgba(50, 190, 151, 0.35);
+}
+
+.ring-1 {
+  width: 145px;
+  height: 145px;
+}
+
+.ring-2 {
+  width: 110px;
+  height: 110px;
+
+  border-color: rgba(243, 111, 72, 0.28);
+}
+
+.wn-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e3f8f0,
+      #fff0e9
+    );
+
+  color: #32b990;
+
+  box-shadow:
+    0 15px 30px rgba(48, 181, 143, 0.12);
+}
+
+.wn-icon svg {
+  width: 42px;
+  height: 42px;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.wn-card-content {
+  text-align: center;
+
+  max-width: 560px;
+
+  margin: auto;
+}
+
+.wn-card-eyebrow {
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  color: #f07852;
+}
+
+.wn-card-content h2 {
+  margin: 10px 0 12px;
+
+  font-size: 28px;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.7px;
+}
+
+.wn-card-content h2 span {
+  color: #29ad87;
+}
+
+.wn-card-content p {
+  margin: auto;
+
+  max-width: 500px;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+
+  color: #77847f;
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.wn-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+
+  margin-top: 27px;
+}
+
+.wn-feature {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  border-radius: 17px;
+
+  background: #f8faf9;
+
+  border: 1px solid #edf1ef;
+}
+
+.wn-feature-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  font-weight: 800;
+}
+
+.wn-feature-icon.mint {
+  background: #e2f7ef;
+  color: #2db58c;
+}
+
+.wn-feature-icon.orange {
+  background: #fff0e8;
+  color: #f2754e;
+}
+
+.wn-feature div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.wn-feature strong {
+  font-size: 12px;
+}
+
+.wn-feature small {
+  font-size: 10px;
+
+  color: #87928e;
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.wn-message {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 18px;
+
+  padding: 17px 18px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #effaf6,
+      #fff5ef
+    );
+}
+
+.wn-message-symbol {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: white;
+
+  font-size: 18px;
+}
+
+.wn-message strong {
+  font-size: 12px;
+}
+
+.wn-message p {
+  margin: 4px 0 0;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+
+  color: #7b8783;
+}
+
+
+/* =========================================================
+   CONTINUE
+========================================================= */
+
+.wn-continue {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 5px 6px 5px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: none;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #16352e,
+      #24574b
+    );
+
+  color: white;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(25, 69, 58, 0.18);
+
+  transition: 0.25s;
+}
+
+.wn-continue:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 16px 35px rgba(25, 69, 58, 0.24);
+}
+
+.wn-arrow {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #f07852;
+
+  font-size: 20px;
+}
+
+
+/* NOTE */
+
+.wn-note {
+  margin-top: 18px;
+
+  text-align: center;
+
+  font-size: 10px;
+
+  color: #8b9692;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.wn-footer {
+  position: relative;
+  z-index: 3;
+
+  width: min(1180px, calc(100% - 50px));
+
+  margin: auto;
+
+  padding: 22px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(18, 35, 31, 0.07);
+
+  font-size: 8px;
+
+  letter-spacing: 1.5px;
+
+  color: #82908b;
+}
+
+.wn-footer > span {
+  font-weight: 900;
+
+  color: #263a34;
+}
+
+.wn-footer div {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.wn-footer i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #f07852;
+}
+
+.wn-footer strong {
+  font-size: 9px;
+
+  color: #263a34;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .wn-header {
+    width: calc(100% - 28px);
+    min-height: 78px;
+  }
+
+  .wn-brand {
+    margin-left: 12px;
+  }
+
+  .wn-brand-text small {
+    display: none;
+  }
+
+  .wn-progress {
+    width: 125px;
+  }
+
+  .wn-progress-top span {
+    font-size: 7px;
+  }
+
+  .wn-main {
+    width: calc(100% - 24px);
+
+    padding-top: 35px;
+  }
+
+  .wn-hero h1 {
+    font-size: 42px;
+  }
+
+  .wn-hero p {
+    font-size: 13px;
+  }
+
+  .wn-card {
+    padding: 22px 17px;
+
+    border-radius: 24px;
+  }
+
+  .wn-card-content h2 {
+    font-size: 23px;
+  }
+
+  .wn-features {
+    grid-template-columns: 1fr;
+  }
+
+  .wn-footer {
+    width: calc(100% - 28px);
+  }
+
+  .wn-footer div {
+    display: none;
+  }
+}
