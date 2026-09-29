@@ -1,0 +1,570 @@
+{
+  "$schema": "workout",
+  "workouts": [
+    {
+      "id": "full_body_bodyweight_beginner",
+      "name": "Full Body (Bodyweight Beginner)",
+      "description": "A 3-day-per-week full body workout for beginners using no equipment.",
+      "goal": "maintain",
+      "fitness_level": "beginner",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 30,
+      "exercise_ids": [
+        "bodyweight_squat",
+        "push_ups",
+        "glute_bridge",
+        "plank",
+        "bird_dog",
+        "forward_lunge"
+      ],
+      "warmup": [
+        "2 min light marching in place",
+        "Arm circles forward and back",
+        "Bodyweight squats x 10",
+        "Hip circles"
+      ],
+      "cooldown": [
+        "Standing forward fold",
+        "Standing quad stretch",
+        "Cobra stretch",
+        "Pigeon stretch"
+      ]
+    },
+    {
+      "id": "full_body_dumbbell_beginner",
+      "name": "Full Body (Dumbbell Beginner)",
+      "description": "A 3-day-per-week full body workout for beginners with dumbbells.",
+      "goal": "maintain",
+      "fitness_level": "beginner",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 40,
+      "exercise_ids": [
+        "goblet_squat",
+        "dumbbell_bench_press",
+        "dumbbell_row",
+        "dumbbell_rdl",
+        "lateral_raise",
+        "plank"
+      ],
+      "warmup": [
+        "5 min light cardio",
+        "Band pull-aparts x 15",
+        "Bodyweight squats x 10",
+        "Push-ups x 10"
+      ],
+      "cooldown": [
+        "Hamstring stretch",
+        "Chest doorway stretch",
+        "Lat hang stretch"
+      ]
+    },
+    {
+      "id": "full_body_gym_beginner",
+      "name": "Full Body (Gym Beginner)",
+      "description": "A 3-day-per-week full body workout for beginners with access to a gym.",
+      "goal": "maintain",
+      "fitness_level": "beginner",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 45,
+      "exercise_ids": [
+        "barbell_back_squat",
+        "barbell_bench_press",
+        "lat_pulldown",
+        "seated_dumbbell_press",
+        "leg_press",
+        "plank"
+      ],
+      "warmup": [
+        "5 min stationary bike",
+        "Bodyweight squats x 10",
+        "Band pull-aparts x 15",
+        "Push-ups x 10"
+      ],
+      "cooldown": [
+        "Stretch chest",
+        "Stretch quads",
+        "Cat-cow x 10",
+        "Child's pose"
+      ]
+    },
+    {
+      "id": "upper_lower_beginner_a",
+      "name": "Upper Body (Beginner A)",
+      "description": "Upper body day for beginners. Pair with a Lower Body day, 4 days per week total.",
+      "goal": "build_muscle",
+      "fitness_level": "beginner",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 40,
+      "exercise_ids": [
+        "dumbbell_bench_press",
+        "seated_cable_row",
+        "seated_dumbbell_press",
+        "face_pull",
+        "dumbbell_curl",
+        "tricep_pushdown"
+      ],
+      "warmup": [
+        "5 min light cardio",
+        "Arm circles",
+        "Band pull-aparts x 15"
+      ],
+      "cooldown": [
+        "Doorway chest stretch",
+        "Cross-body shoulder stretch",
+        "Tricep overhead stretch"
+      ]
+    },
+    {
+      "id": "upper_lower_beginner_b",
+      "name": "Lower Body (Beginner A)",
+      "description": "Lower body day for beginners. Pair with Upper Body A, 4 days per week total.",
+      "goal": "lose_weight",
+      "fitness_level": "beginner",
+      "focus_area": "legs",
+      "estimated_duration_minutes": 35,
+      "exercise_ids": [
+        "goblet_squat",
+        "dumbbell_rdl",
+        "leg_press",
+        "standing_calf_raise",
+        "plank"
+      ],
+      "warmup": [
+        "5 min light cardio",
+        "Bodyweight squats x 10",
+        "Hip circles",
+        "Leg swings"
+      ],
+      "cooldown": [
+        "Standing quad stretch",
+        "Hamstring stretch",
+        "Calf stretch"
+      ]
+    },
+    {
+      "id": "upper_lower_intermediate_a",
+      "name": "Upper Body (Intermediate)",
+      "description": "Upper body day for intermediate lifters.",
+      "goal": "build_muscle",
+      "fitness_level": "intermediate",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 50,
+      "exercise_ids": [
+        "barbell_bench_press",
+        "barbell_row",
+        "incline_dumbbell_press",
+        "lat_pulldown",
+        "lateral_raise",
+        "barbell_curl",
+        "skull_crusher"
+      ],
+      "warmup": [
+        "5 min rowing machine",
+        "Band pull-aparts x 20",
+        "Push-ups x 10",
+        "Empty bar bench press x 10"
+      ],
+      "cooldown": [
+        "Doorway chest stretch",
+        "Lat stretch",
+        "Tricep stretch"
+      ]
+    },
+    {
+      "id": "upper_lower_intermediate_b",
+      "name": "Lower Body (Intermediate)",
+      "description": "Lower body day for intermediate lifters.",
+      "goal": "lose_weight",
+      "fitness_level": "intermediate",
+      "focus_area": "legs",
+      "estimated_duration_minutes": 50,
+      "exercise_ids": [
+        "barbell_back_squat",
+        "romanian_deadlift",
+        "leg_press",
+        "leg_extension",
+        "lying_leg_curl",
+        "standing_calf_raise"
+      ],
+      "warmup": [
+        "5 min bike",
+        "Bodyweight squats x 10",
+        "Bodyweight lunges x 10",
+        "Hip circles"
+      ],
+      "cooldown": [
+        "Standing quad stretch",
+        "Hamstring stretch",
+        "Cobra stretch"
+      ]
+    },
+    {
+      "id": "ppl_intermediate_push",
+      "name": "Push Day (Intermediate)",
+      "description": "Push-focused workout for an intermediate push/pull/legs split.",
+      "goal": "build_muscle",
+      "fitness_level": "intermediate",
+      "focus_area": "chest",
+      "estimated_duration_minutes": 50,
+      "exercise_ids": [
+        "barbell_bench_press",
+        "incline_dumbbell_press",
+        "overhead_press",
+        "cable_fly",
+        "lateral_raise",
+        "tricep_pushdown",
+        "overhead_tricep_extension"
+      ],
+      "warmup": [
+        "5 min cardio",
+        "Band pull-aparts x 20",
+        "Empty bar bench x 10",
+        "Empty bar overhead press x 10"
+      ],
+      "cooldown": [
+        "Doorway chest stretch",
+        "Cross-body shoulder stretch",
+        "Tricep overhead stretch"
+      ]
+    },
+    {
+      "id": "ppl_intermediate_pull",
+      "name": "Pull Day (Intermediate)",
+      "description": "Pull-focused workout for an intermediate push/pull/legs split.",
+      "goal": "build_muscle",
+      "fitness_level": "intermediate",
+      "focus_area": "back",
+      "estimated_duration_minutes": 50,
+      "exercise_ids": [
+        "barbell_row",
+        "pull_ups",
+        "seated_cable_row",
+        "face_pull",
+        "barbell_curl",
+        "hammer_curl",
+        "reverse_lunge"
+      ],
+      "warmup": [
+        "5 min rowing",
+        "Band pull-aparts x 20",
+        "Empty bar row x 10",
+        "Dead hang x 30 sec"
+      ],
+      "cooldown": [
+        "Lat hang stretch",
+        "Cross-body shoulder stretch",
+        "Standing bicep stretch"
+      ]
+    },
+    {
+      "id": "ppl_intermediate_legs",
+      "name": "Legs Day (Intermediate)",
+      "description": "Leg-focused workout for an intermediate push/pull/legs split.",
+      "goal": "build_muscle",
+      "fitness_level": "intermediate",
+      "focus_area": "legs",
+      "estimated_duration_minutes": 55,
+      "exercise_ids": [
+        "barbell_back_squat",
+        "romanian_deadlift",
+        "leg_press",
+        "leg_extension",
+        "lying_leg_curl",
+        "standing_calf_raise",
+        "plank"
+      ],
+      "warmup": [
+        "5 min bike",
+        "Bodyweight squats x 15",
+        "Walking lunges x 10",
+        "Hip circles"
+      ],
+      "cooldown": [
+        "Standing quad stretch",
+        "Hamstring stretch",
+        "Calf stretch",
+        "Cobra stretch"
+      ]
+    },
+    {
+      "id": "ppl_advanced_push",
+      "name": "Push Day (Advanced)",
+      "description": "High-volume push day for advanced lifters.",
+      "goal": "build_muscle",
+      "fitness_level": "advanced",
+      "focus_area": "chest",
+      "estimated_duration_minutes": 60,
+      "exercise_ids": [
+        "barbell_bench_press",
+        "incline_barbell_press",
+        "overhead_press",
+        "dumbbell_fly",
+        "cable_fly",
+        "lateral_raise",
+        "rear_delt_fly",
+        "close_grip_bench_press",
+        "tricep_rope_pushdown"
+      ],
+      "warmup": [
+        "5 min cardio",
+        "Band pull-aparts x 20",
+        "Empty bar bench x 15",
+        "Pike push-ups x 10"
+      ],
+      "cooldown": [
+        "Doorway chest stretch",
+        "Shoulder stretch",
+        "Tricep stretch"
+      ]
+    },
+    {
+      "id": "ppl_advanced_pull",
+      "name": "Pull Day (Advanced)",
+      "description": "High-volume pull day for advanced lifters.",
+      "goal": "build_muscle",
+      "fitness_level": "advanced",
+      "focus_area": "back",
+      "estimated_duration_minutes": 60,
+      "exercise_ids": [
+        "deadlift",
+        "pendlay_row",
+        "pull_ups",
+        "lat_pulldown",
+        "seated_cable_row",
+        "face_pull",
+        "barbell_curl",
+        "hammer_curl",
+        "straight_arm_pulldown"
+      ],
+      "warmup": [
+        "5 min rowing",
+        "Band pull-aparts x 20",
+        "Dead hang x 30 sec",
+        "Light bar row x 10"
+      ],
+      "cooldown": [
+        "Lat hang stretch",
+        "Cross-body shoulder stretch",
+        "Standing bicep stretch"
+      ]
+    },
+    {
+      "id": "chest_focus",
+      "name": "Chest Focus Day",
+      "description": "A chest-dominant day for hypertrophy.",
+      "goal": "build_muscle",
+      "fitness_level": "intermediate",
+      "focus_area": "chest",
+      "estimated_duration_minutes": 45,
+      "exercise_ids": [
+        "barbell_bench_press",
+        "incline_dumbbell_press",
+        "dumbbell_fly",
+        "cable_fly",
+        "push_ups",
+        "diamond_push_ups"
+      ],
+      "warmup": [
+        "5 min cardio",
+        "Band pull-aparts x 20",
+        "Push-ups x 10",
+        "Empty bar bench x 10"
+      ],
+      "cooldown": [
+        "Doorway chest stretch",
+        "Standing chest stretch",
+        "Tricep stretch"
+      ]
+    },
+    {
+      "id": "back_focus",
+      "name": "Back Focus Day",
+      "description": "A back-dominant day for hypertrophy and pulling strength.",
+      "goal": "lose_weight",
+      "fitness_level": "intermediate",
+      "focus_area": "back",
+      "estimated_duration_minutes": 50,
+      "exercise_ids": [
+        "barbell_row",
+        "lat_pulldown",
+        "seated_cable_row",
+        "dumbbell_row",
+        "face_pull",
+        "pull_ups"
+      ],
+      "warmup": [
+        "5 min rowing",
+        "Band pull-aparts x 20",
+        "Dead hang x 30 sec",
+        "Empty bar row x 10"
+      ],
+      "cooldown": [
+        "Lat stretch",
+        "Cat-cow",
+        "Cross-body shoulder stretch"
+      ]
+    },
+    {
+      "id": "legs_focus",
+      "name": "Legs Focus Day",
+      "description": "A leg-dominant day for hypertrophy and strength.",
+      "goal": "improve_endurance",
+      "fitness_level": "intermediate",
+      "focus_area": "legs",
+      "estimated_duration_minutes": 55,
+      "exercise_ids": [
+        "barbell_back_squat",
+        "romanian_deadlift",
+        "leg_press",
+        "walking_lunge",
+        "leg_extension",
+        "lying_leg_curl",
+        "standing_calf_raise"
+      ],
+      "warmup": [
+        "5 min bike",
+        "Bodyweight squats x 15",
+        "Walking lunges x 10",
+        "Hip circles"
+      ],
+      "cooldown": [
+        "Standing quad stretch",
+        "Hamstring stretch",
+        "Calf stretch"
+      ]
+    },
+    {
+      "id": "shoulders_arms_focus",
+      "name": "Shoulders and Arms Focus",
+      "description": "A combined day targeting shoulders, biceps, and triceps.",
+      "goal": "lose_weight",
+      "fitness_level": "intermediate",
+      "focus_area": "shoulders",
+      "estimated_duration_minutes": 50,
+      "exercise_ids": [
+        "overhead_press",
+        "seated_dumbbell_press",
+        "lateral_raise",
+        "rear_delt_fly",
+        "barbell_curl",
+        "incline_dumbbell_curl",
+        "skull_crusher",
+        "tricep_rope_pushdown"
+      ],
+      "warmup": [
+        "5 min cardio",
+        "Band pull-aparts x 20",
+        "Empty bar overhead press x 10",
+        "Arm circles"
+      ],
+      "cooldown": [
+        "Cross-body shoulder stretch",
+        "Tricep stretch",
+        "Standing bicep stretch"
+      ]
+    },
+    {
+      "id": "core_focus",
+      "name": "Core Focus Day",
+      "description": "A short standalone core workout.",
+      "goal": "maintain",
+      "fitness_level": "beginner",
+      "focus_area": "core",
+      "estimated_duration_minutes": 20,
+      "exercise_ids": [
+        "plank",
+        "side_plank",
+        "dead_bug",
+        "bird_dog",
+        "russian_twist",
+        "hollow_body_hold"
+      ],
+      "warmup": [
+        "Cat-cow x 10",
+        "Bird-dog x 10 each side",
+        "Dead bug x 10 each side"
+      ],
+      "cooldown": [
+        "Cobra stretch",
+        "Child's pose",
+        "Standing forward fold"
+      ]
+    },
+    {
+      "id": "hiit_conditioning",
+      "name": "HIIT Conditioning Circuit",
+      "description": "A high-intensity conditioning circuit for fat loss and endurance.",
+      "goal": "lose_weight",
+      "fitness_level": "intermediate",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 25,
+      "exercise_ids": [
+        "kettlebell_swing",
+        "push_ups",
+        "bodyweight_squat",
+        "plank",
+        "glute_bridge",
+        "reverse_lunge"
+      ],
+      "warmup": [
+        "3 min light cardio",
+        "Arm circles",
+        "Bodyweight squats x 10",
+        "Inchworms x 5"
+      ],
+      "cooldown": [
+        "Standing forward fold",
+        "Walking quad stretch",
+        "Deep breathing x 1 min"
+      ]
+    },
+    {
+      "id": "endurance_circuit",
+      "name": "Endurance Circuit",
+      "description": "A longer circuit emphasizing muscular endurance and cardiovascular fitness.",
+      "goal": "improve_endurance",
+      "fitness_level": "intermediate",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 35,
+      "exercise_ids": [
+        "bodyweight_squat",
+        "push_ups",
+        "plank",
+        "step_up",
+        "forward_lunge",
+        "glute_bridge",
+        "side_plank",
+        "inverted_row"
+      ],
+      "warmup": [
+        "5 min light cardio",
+        "Dynamic stretching x 5 min"
+      ],
+      "cooldown": [
+        "Full body stretch x 5 min"
+      ]
+    },
+    {
+      "id": "mobility_recovery",
+      "name": "Mobility and Active Recovery",
+      "description": "A light day to promote blood flow, mobility, and recovery.",
+      "goal": "improve_endurance",
+      "fitness_level": "beginner",
+      "focus_area": "full_body",
+      "estimated_duration_minutes": 25,
+      "exercise_ids": [
+        "glute_bridge",
+        "bird_dog",
+        "dead_bug",
+        "plank",
+        "side_plank"
+      ],
+      "warmup": [
+        "5 min easy walking"
+      ],
+      "cooldown": [
+        "Full body stretch: chest, back, hips, hamstrings, calves"
+      ]
+    }
+  ]
+}

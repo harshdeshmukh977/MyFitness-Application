@@ -1,0 +1,31 @@
+{
+  "name": "myfitness-ai-coach-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone AI Coach demo frontend for MyFitness-AI. Consumes the FastAPI backend via the existing REST contracts.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo \"eslint not configured — skipping\""
+  },
+  "dependencies": {
+    "framer-motion": "^11.3.19",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "@tanstack/react-query": "^5.62.11"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@types/node": "^22.10.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.19"
+  }
+}
