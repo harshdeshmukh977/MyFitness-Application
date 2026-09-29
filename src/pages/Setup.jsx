@@ -264,25 +264,58 @@ function Setup() {
      CONTINUE
   ======================================================= */
 
-  const handleContinue = () => {
+  const handleContinue = async () => {
   if (!selectedWorkout || !selectedLevel) {
     return;
   }
 
+  const userId = localStorage.getItem("userId");
+
+  if (!userId) {
+    alert("User not found. Please login again.");
+    navigate("/login");
+    return;
+  }
+
   const setupData = {
+    userId: Number(userId),
     workoutType: selectedWorkout,
     fitnessLevel: selectedLevel,
-    completedAt: new Date().toISOString(),
   };
 
-  localStorage.setItem(
-    "myfitnessSetup",
-    JSON.stringify(setupData)
-  );
+  try {
+    const response = await fetch(
+      "http://localhost:8080/api/setup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(setupData),
+      }
+    );
 
-  console.log("MyFitness Setup Saved:", setupData);
+    if (!response.ok) {
+      throw new Error("Failed to save setup");
+    }
 
-  navigate("/personal-profile");
+    const savedSetup = await response.json();
+
+    localStorage.setItem(
+      "myfitnessSetup",
+      JSON.stringify(savedSetup)
+    );
+
+    console.log("Setup saved successfully:", savedSetup);
+
+    navigate("/personal-profile");
+
+  } catch (error) {
+    console.error("Setup error:", error);
+    alert(
+      "Unable to save setup. Please make sure backend is running."
+    );
+  }
 };
   /* =======================================================
      BACK

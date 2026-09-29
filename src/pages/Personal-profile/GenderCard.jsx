@@ -4,13 +4,21 @@ import "./GenderCard.css";
 
 function GenderCard() {
   const navigate = useNavigate();
+
   const [gender, setGender] = useState("");
 
   const handleContinue = () => {
     if (!gender) return;
 
-  
-navigate("/profile-summary");
+    // Save selected gender
+    localStorage.setItem("gender", gender);
+
+    // Also save with descriptive key
+    localStorage.setItem("userGender", gender);
+
+    console.log("Gender saved:", gender);
+
+    navigate("/profile-summary");
   };
 
   return (
@@ -21,6 +29,7 @@ navigate("/profile-summary");
       <header className="gender-navbar">
 
         {/* LEFT - MYFITNESS */}
+
         <div className="gender-brand">
 
           <img
@@ -117,9 +126,10 @@ navigate("/profile-summary");
 
           <div className="gender-options">
 
-            {/* MALE */}
+            {/* ================= MALE ================= */}
 
             <button
+              type="button"
               className={`gender-card ${
                 gender === "male" ? "selected" : ""
               }`}
@@ -151,9 +161,10 @@ navigate("/profile-summary");
             </button>
 
 
-            {/* FEMALE */}
+            {/* ================= FEMALE ================= */}
 
             <button
+              type="button"
               className={`gender-card ${
                 gender === "female" ? "selected" : ""
               }`}
@@ -185,9 +196,10 @@ navigate("/profile-summary");
             </button>
 
 
-            {/* PREFER NOT TO SAY */}
+            {/* ================= PREFER NOT TO SAY ================= */}
 
             <button
+              type="button"
               className={`gender-card ${
                 gender === "other" ? "selected" : ""
               }`}
@@ -267,6 +279,7 @@ navigate("/profile-summary");
 
 
           <button
+            type="button"
             className={`gender-continue ${
               !gender ? "disabled" : ""
             }`}

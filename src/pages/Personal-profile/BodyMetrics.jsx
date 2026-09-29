@@ -23,9 +23,57 @@ function BodyMetrics() {
     }
   };
 
-  const handleContinue = () => {
-    navigate("/gender-card");
+  const handleContinue = async () => {
+  const userId = localStorage.getItem("userId");
+
+  if (!userId) {
+    alert("User not found. Please login again.");
+    navigate("/login");
+    return;
+  }
+
+  const bodyMetricsData = {
+    userId: Number(userId),
+    age: age,
+    height: height,
+    weight: weight,
   };
+
+  try {
+    const response = await fetch(
+      "http://localhost:8080/api/body-metrics",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(bodyMetricsData),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Failed to save body metrics");
+    }
+
+    const savedData = await response.json();
+
+    localStorage.setItem(
+      "myfitnessBodyMetrics",
+      JSON.stringify(savedData)
+    );
+
+    console.log("Body Metrics saved successfully:", savedData);
+
+    navigate("/gender-card");
+
+  } catch (error) {
+    console.error("Body Metrics error:", error);
+
+    alert(
+      "Unable to save body metrics. Please make sure backend is running."
+    );
+  }
+};
 
   return (
     <div className="bm-page">

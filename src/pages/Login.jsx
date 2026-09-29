@@ -242,67 +242,86 @@ export default function Login() {
  
 
 
-  function handleLogin(event) {
-
+  async function handleLogin(event) {
   event.preventDefault();
 
-  // Remove previous message
   setMessage("");
 
-  // Check email / phone
   if (!email.trim()) {
-
-    setMessage(
-      "Please enter your email or phone number."
-    );
-
+    setMessage("Please enter your email or phone number.");
     return;
   }
 
-  // Check password
   if (!password.trim()) {
-
-    setMessage(
-      "Please enter your password."
-    );
-
+    setMessage("Please enter your password.");
     return;
   }
 
-  // Basic email validation
-  const looksLikeEmail =
-    email.includes("@");
+  const looksLikeEmail = email.includes("@");
 
   if (looksLikeEmail) {
-
-    const emailPattern =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailPattern.test(email)) {
-
-      setMessage(
-        "Please enter a valid email address."
-      );
-
+      setMessage("Please enter a valid email address.");
       return;
     }
   }
 
-  // Basic password length check
   if (password.length < 6) {
-
-    setMessage(
-      "Password must be at least 6 characters."
-    );
-
+    setMessage("Password must be at least 6 characters.");
     return;
   }
 
-  // Frontend-only success message
-  setMessage(
-    "Login details look good. Authentication will be connected with Spring Boot later."
-  );
+  try {
+    const response = await fetch(
+      "http://localhost:8080/api/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          password: password,
+        }),
+      }
+    );
 
+    const text = await response.text();
+
+    let data;
+
+    try {
+      data = JSON.parse(text);
+    } catch {
+      data = text;
+    }
+
+    if (!response.ok) {
+      setMessage(data || "Invalid email or password.");
+      return;
+    }
+
+    // Save logged-in user information
+    localStorage.setItem("userId", data.id);
+    localStorage.setItem("name", data.name);
+    localStorage.setItem("userName", data.name);
+    localStorage.setItem("email", data.email);
+
+    setMessage(`Welcome back, ${data.name}! 🎉`);
+
+    // Go to Setup page
+    setTimeout(() => {
+      navigate("/setup");
+    }, 1000);
+
+  } catch (error) {
+    console.error("Login error:", error);
+    setMessage(
+      "Unable to connect to server. Please make sure backend is running."
+    );
+  }
 }
 
 

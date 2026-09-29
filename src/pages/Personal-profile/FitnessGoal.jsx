@@ -22,7 +22,7 @@ function FitnessGoal() {
       type: "orange",
     },
     {
-      id: "get-fitter",
+     id: "get-fit",
       icon: "⚡",
       title: "Get Fitter",
       description: "Improve your overall fitness, stamina and energy.",
@@ -48,11 +48,14 @@ function FitnessGoal() {
   };
 
   // CONTINUE → BENEFITS
-  const handleContinue = () => {
-    if (!selectedGoal) return;
+ const handleContinue = () => {
+  if (!selectedGoal) return;
 
-    navigate("/benefits-profile");
-  };
+  localStorage.setItem("fitnessGoal", selectedGoal);
+  localStorage.setItem("selectedGoal", selectedGoal);
+
+  navigate("/benefits-profile");
+};
 
   const selectedGoalData = goals.find(
     (goal) => goal.id === selectedGoal

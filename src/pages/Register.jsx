@@ -92,76 +92,113 @@ export default function Register() {
 
   const [message, setMessage] = useState("");
 
-  function handleRegister(event) {
+  async function handleRegister(event) {
+  event.preventDefault();
 
-    event.preventDefault();
+  setMessage("");
 
-    setMessage("");
+  if (!fullName.trim()) {
+    setMessage("Please enter your full name.");
+    return;
+  }
 
-    if (!fullName.trim()) {
-      setMessage("Please enter your full name.");
+  if (fullName.trim().length < 3) {
+    setMessage("Name must contain at least 3 characters.");
+    return;
+  }
+
+  if (!email.trim()) {
+    setMessage("Please enter your email address.");
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(email)) {
+    setMessage("Please enter a valid email address.");
+    return;
+  }
+
+  if (!phone.trim()) {
+    setMessage("Please enter your phone number.");
+    return;
+  }
+
+  const phonePattern = /^[0-9]{10}$/;
+
+  if (!phonePattern.test(phone.replace(/\s/g, ""))) {
+    setMessage("Please enter a valid 10-digit phone number.");
+    return;
+  }
+
+  if (!password) {
+    setMessage("Please create a password.");
+    return;
+  }
+
+  if (password.length < 6) {
+    setMessage("Password must be at least 6 characters.");
+    return;
+  }
+
+  if (!confirmPassword) {
+    setMessage("Please confirm your password.");
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    setMessage("Passwords do not match.");
+    return;
+  }
+
+  if (!agreeTerms) {
+    setMessage("Please accept the Terms & Conditions.");
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      "http://localhost:8080/api/auth/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: fullName.trim(),
+          email: email.trim(),
+          password: password,
+        }),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      setMessage(data || "Registration failed.");
       return;
     }
 
-    if (fullName.trim().length < 3) {
-      setMessage("Name must contain at least 3 characters.");
-      return;
-    }
+    // Save registered user information
+    localStorage.setItem("name", data.name);
+    localStorage.setItem("userName", data.name);
+    localStorage.setItem("email", data.email);
+    localStorage.setItem("userId", data.id);
 
-    if (!email.trim()) {
-      setMessage("Please enter your email address.");
-      return;
-    }
+    setMessage("Account created successfully! 🎉");
 
-    const emailPattern =
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Go to login page after successful registration
+    setTimeout(() => {
+      window.location.href = "/login";
+    }, 1000);
 
-    if (!emailPattern.test(email)) {
-      setMessage("Please enter a valid email address.");
-      return;
-    }
-
-    if (!phone.trim()) {
-      setMessage("Please enter your phone number.");
-      return;
-    }
-
-    const phonePattern = /^[0-9]{10}$/;
-
-    if (!phonePattern.test(phone.replace(/\s/g, ""))) {
-      setMessage("Please enter a valid 10-digit phone number.");
-      return;
-    }
-
-    if (!password) {
-      setMessage("Please create a password.");
-      return;
-    }
-
-    if (password.length < 6) {
-      setMessage("Password must be at least 6 characters.");
-      return;
-    }
-
-    if (!confirmPassword) {
-      setMessage("Please confirm your password.");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      setMessage("Passwords do not match.");
-      return;
-    }
-
-    if (!agreeTerms) {
-      setMessage("Please accept the Terms & Conditions.");
-      return;
-    }
-
+  } catch (error) {
+    console.error("Registration error:", error);
     setMessage(
-      "Account details look good. Backend registration will be connected later."
+      "Unable to connect to server. Please make sure backend is running."
     );
   }
+}
 
   return (
     <div className="register-page">

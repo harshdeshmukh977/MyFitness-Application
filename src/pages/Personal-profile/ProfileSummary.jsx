@@ -1,14 +1,69 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ProfileSummary.css";
 
 function ProfileSummary() {
   const navigate = useNavigate();
 
-  const age = 21;
-  const height = 175;
-  const weight = 70;
-  const gender = "Male";
+  const [bodyMetrics, setBodyMetrics] = useState(null);
 
+  // ----------------------------------------
+  // LOAD BODY METRICS FROM BACKEND
+  // ----------------------------------------
+
+  useEffect(() => {
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) {
+      console.error("User ID not found");
+      return;
+    }
+
+    fetch(`http://localhost:8080/api/body-metrics/${userId}`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch body metrics");
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Profile Summary Body Metrics:", data);
+        setBodyMetrics(data);
+      })
+      .catch((error) => {
+        console.error(
+          "Profile Summary Body Metrics error:",
+          error
+        );
+      });
+  }, []);
+
+  // ----------------------------------------
+  // BODY METRICS
+  // ----------------------------------------
+
+  const age = Number(bodyMetrics?.age) || 21;
+  const height = Number(bodyMetrics?.height) || 175;
+  const weight = Number(bodyMetrics?.weight) || 70;
+
+  // ----------------------------------------
+  // GENDER
+  // ----------------------------------------
+
+  const savedGender =
+  localStorage.getItem("gender") ||
+  localStorage.getItem("userGender") ||
+  localStorage.getItem("selectedGender") ||
+  "";
+
+const genderMap = {
+  male: "Male",
+  female: "Female",
+  other: "Prefer not to say",
+};
+
+const gender = genderMap[savedGender] || "Male";
   return (
     <div className="summary-page">
 
@@ -138,7 +193,7 @@ function ProfileSummary() {
 
             <div className="detail-icon mint">
 
-              <span>21</span>
+              <span>{age}</span>
 
             </div>
 
