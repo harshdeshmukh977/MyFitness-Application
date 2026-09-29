@@ -1,0 +1,1950 @@
+/* ============================================================
+   MYFITNESS — PREMIUM SETUP EXPERIENCE
+   ------------------------------------------------------------
+   Theme:
+   White       → Primary
+   Mint Green  → #72E6C0
+   Cantaloupe  → #FFA77A
+   Dark Ink    → #10201B
+
+   Designed for:
+   - Workout selection
+   - Fitness level
+   - Personalized setup
+   ============================================================ */
+
+
+/* ============================================================
+   01. ROOT
+   ============================================================ */
+
+:root {
+  --mf-white: #ffffff;
+  --mf-soft-white: #f8faf9;
+  --mf-surface: #f3f7f5;
+  --mf-surface-2: #edf3f0;
+
+  --mf-ink: #10201b;
+  --mf-ink-soft: #53615c;
+  --mf-ink-muted: #7b8782;
+
+  --mf-mint: #72e6c0;
+  --mf-mint-dark: #39b996;
+  --mf-mint-soft: #e1faf2;
+  --mf-mint-pale: #f0fcf8;
+
+  --mf-orange: #ffa77a;
+  --mf-orange-dark: #ed8050;
+  --mf-orange-soft: #fff0e8;
+  --mf-orange-pale: #fff7f2;
+
+  --mf-border: #dfe8e4;
+  --mf-border-dark: #ccd8d3;
+
+  --mf-shadow-xs:
+    0 1px 2px rgba(16, 32, 27, 0.03);
+
+  --mf-shadow-sm:
+    0 8px 25px rgba(16, 32, 27, 0.06);
+
+  --mf-shadow-md:
+    0 18px 50px rgba(16, 32, 27, 0.09);
+
+  --mf-radius-sm: 12px;
+  --mf-radius-md: 18px;
+  --mf-radius-lg: 24px;
+  --mf-radius-xl: 32px;
+
+  --mf-transition:
+    220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* ============================================================
+   02. RESET
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--mf-soft-white);
+
+  color: var(--mf-ink);
+
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/* ============================================================
+   03. PAGE
+   ============================================================ */
+
+.setup-page {
+  position: relative;
+
+  min-height: 100vh;
+  width: 100%;
+
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 8% 4%,
+      rgba(114, 230, 192, 0.13),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 94% 15%,
+      rgba(255, 167, 122, 0.10),
+      transparent 25%
+    ),
+    var(--mf-soft-white);
+}
+
+
+/* ============================================================
+   04. BACKGROUND
+   ============================================================ */
+
+.setup-background {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: 0;
+}
+
+
+/* subtle mint glow */
+
+.setup-orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  opacity: 0.45;
+}
+
+
+.setup-orb-mint {
+  width: 420px;
+  height: 420px;
+
+  top: -200px;
+  left: -180px;
+
+  background: rgba(114, 230, 192, 0.22);
+}
+
+
+.setup-orb-orange {
+  width: 380px;
+  height: 380px;
+
+  right: -180px;
+  top: 220px;
+
+  background: rgba(255, 167, 122, 0.17);
+}
+
+
+/* ============================================================
+   05. SUBTLE GRID
+   ============================================================ */
+
+.setup-grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.25;
+
+  background-image:
+    linear-gradient(
+      rgba(16, 32, 27, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(16, 32, 27, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 70%
+    );
+}
+
+
+/* ============================================================
+   06. MAIN CONTAINER
+   ============================================================ */
+
+.setup-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(
+    1420px,
+    calc(100% - 64px)
+  );
+
+  margin: 0 auto;
+
+  padding:
+    32px
+    0
+    70px;
+}
+
+
+/* ============================================================
+   07. HEADER
+   ============================================================ */
+
+.setup-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 40px;
+
+  padding-bottom: 30px;
+
+  border-bottom:
+    1px solid
+    rgba(16, 32, 27, 0.08);
+}
+
+
+/* ============================================================
+   BRAND
+   ============================================================ */
+
+.setup-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+}
+
+
+.setup-brand-mark {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+
+  flex-shrink: 0;
+}
+
+.setup-brand-mark img {
+  width: 46px;
+  height: 46px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.setup-brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+
+.setup-brand-name {
+  font-size: 19px;
+
+  line-height: 1;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+
+  color: var(--mf-ink);
+}
+
+
+.setup-brand-name span {
+  color: var(--mf-mint-dark);
+}
+
+
+.setup-brand-line {
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.20em;
+
+  color: var(--mf-ink-muted);
+}
+
+
+/* ============================================================
+   PROGRESS
+   ============================================================ */
+
+.setup-progress {
+  width: 220px;
+}
+
+
+.setup-progress-label {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 9px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  font-weight: 800;
+
+  color: var(--mf-ink-muted);
+}
+
+
+.setup-progress-label strong {
+  color: var(--mf-ink);
+}
+
+
+.setup-progress-track {
+  position: relative;
+
+  height: 4px;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 999px;
+
+  background:
+    #e5ece9;
+}
+
+
+.setup-progress-active {
+  width: 11.111%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--mf-mint-dark),
+      var(--mf-mint)
+    );
+}
+
+
+/* ============================================================
+   08. INTRO
+   ============================================================ */
+
+.setup-intro {
+  max-width: 780px;
+
+  padding:
+    70px
+    0
+    58px;
+}
+
+
+.setup-intro-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--mf-mint-dark);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.20em;
+}
+
+
+.intro-line {
+  width: 34px;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--mf-mint-dark),
+      var(--mf-mint)
+    );
+}
+
+
+.setup-intro h1 {
+  margin: 0;
+
+  color: var(--mf-ink);
+
+  font-size:
+    clamp(
+      48px,
+      6vw,
+      78px
+    );
+
+  line-height: 0.98;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 900;
+}
+
+
+.setup-intro h1 span {
+  color: transparent;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--mf-mint-dark),
+      var(--mf-mint)
+    );
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+}
+
+
+.setup-intro p {
+  max-width: 610px;
+
+  margin:
+    24px
+    0
+    0;
+
+  color: var(--mf-ink-soft);
+
+  font-size: 16px;
+
+  line-height: 1.75;
+}
+
+
+/* ============================================================
+   09. SELECTION SECTION
+   ============================================================ */
+
+.selection-section {
+  margin-bottom: 72px;
+}
+
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+
+.section-kicker {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--mf-ink-muted);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.18em;
+}
+
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: 28px;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.035em;
+
+  font-weight: 850;
+
+  color: var(--mf-ink);
+}
+
+
+.section-counter {
+  flex-shrink: 0;
+
+  padding:
+    8px
+    12px;
+
+  border:
+    1px solid
+    var(--mf-border);
+
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  color: var(--mf-ink-muted);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* ============================================================
+   10. WORKOUT GRID
+   ============================================================ */
+
+.workout-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+/* ============================================================
+   11. WORKOUT CARD
+   ============================================================ */
+
+.workout-card {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  text-align: left;
+
+  border:
+    1px solid
+    var(--mf-border);
+
+  border-radius: var(--mf-radius-lg);
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  color: inherit;
+
+  cursor: pointer;
+
+  box-shadow: var(--mf-shadow-xs);
+
+  transition:
+    transform var(--mf-transition),
+    box-shadow var(--mf-transition),
+    border-color var(--mf-transition);
+
+  appearance: none;
+}
+
+
+.workout-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(57, 185, 150, 0.40);
+
+  box-shadow:
+    0 18px 42px
+    rgba(16, 32, 27, 0.10);
+}
+
+
+.workout-card:active {
+  transform:
+    translateY(-1px)
+    scale(0.995);
+}
+
+
+.workout-selected {
+  border-color:
+    var(--mf-mint-dark);
+
+  box-shadow:
+    0 20px 45px
+    rgba(57, 185, 150, 0.14);
+}
+
+
+/* ============================================================
+   12. WORKOUT IMAGE
+   ============================================================ */
+
+.workout-image-wrapper {
+  position: relative;
+
+  height: 285px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #dce9e4,
+      #cbd8d3
+    );
+}
+
+
+.workout-image {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 600ms
+    cubic-bezier(0.22, 1, 0.36, 1),
+    filter 500ms ease;
+}
+
+
+.workout-card:hover .workout-image {
+  transform: scale(1.045);
+
+  filter:
+    saturate(1.06)
+    contrast(1.03);
+}
+
+
+/* ============================================================
+   IMAGE OVERLAY
+   ============================================================ */
+
+.workout-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(8, 20, 16, 0.05),
+      rgba(8, 20, 16, 0.05) 40%,
+      rgba(8, 20, 16, 0.72)
+    );
+
+  pointer-events: none;
+}
+
+
+/* ============================================================
+   NUMBER
+   ============================================================ */
+
+.workout-number {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.30);
+
+  border-radius: 11px;
+
+  background:
+    rgba(10, 22, 18, 0.40);
+
+  backdrop-filter:
+    blur(12px);
+
+  color: white;
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* ============================================================
+   CATEGORY
+   ============================================================ */
+
+.workout-category {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    8px
+    11px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.25);
+
+  border-radius: 999px;
+
+  background:
+    rgba(10, 22, 18, 0.40);
+
+  backdrop-filter:
+    blur(12px);
+
+  color: white;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.13em;
+}
+
+
+/* ============================================================
+   SELECT INDICATOR
+   ============================================================ */
+
+.workout-selection-indicator {
+  position: absolute;
+
+  right: 18px;
+  bottom: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-radius: 50%;
+
+  background:
+    rgba(8, 20, 16, 0.58);
+
+  backdrop-filter:
+    blur(12px);
+
+  color: white;
+
+  transition:
+    background var(--mf-transition),
+    transform var(--mf-transition);
+}
+
+
+.workout-selected
+.workout-selection-indicator {
+  background:
+    var(--mf-mint);
+
+  color:
+    var(--mf-ink);
+
+  border-color:
+    var(--mf-mint);
+
+  transform: scale(1.05);
+}
+
+
+/* ============================================================
+   IMAGE TITLE
+   ============================================================ */
+
+.workout-image-title {
+  position: absolute;
+
+  left: 20px;
+  right: 72px;
+  bottom: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  color: white;
+}
+
+
+.workout-image-title span {
+  font-size: 9px;
+
+  font-weight: 700;
+
+  opacity: 0.72;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.workout-image-title strong {
+  font-size: 25px;
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+}
+
+
+/* ============================================================
+   13. WORKOUT CONTENT
+   ============================================================ */
+
+.workout-content {
+  padding:
+    24px
+    24px
+    20px;
+}
+
+
+.workout-title-row {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+}
+
+
+.workout-title-row h3 {
+  margin: 0;
+
+  font-size: 22px;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+
+  color: var(--mf-ink);
+
+  font-weight: 850;
+}
+
+
+.workout-title-row p {
+  margin:
+    6px
+    0
+    0;
+
+  color: var(--mf-mint-dark);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+.workout-description {
+  min-height: 52px;
+
+  margin:
+    16px
+    0
+    22px;
+
+  color: var(--mf-ink-soft);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   14. WORKOUT META
+   ============================================================ */
+
+.workout-meta {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1px
+    1fr;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding:
+    17px
+    0;
+
+  border-top:
+    1px solid
+    var(--mf-border);
+
+  border-bottom:
+    1px solid
+    var(--mf-border);
+}
+
+
+.workout-meta-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.workout-meta-item span {
+  color: var(--mf-ink-muted);
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+}
+
+
+.workout-meta-item strong {
+  color: var(--mf-ink);
+
+  font-size: 11px;
+
+  font-weight: 850;
+}
+
+
+.workout-meta-divider {
+  width: 1px;
+
+  height: 32px;
+
+  background:
+    var(--mf-border);
+}
+
+
+/* ============================================================
+   15. WORKOUT FOOTER
+   ============================================================ */
+
+.workout-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding-top: 18px;
+}
+
+
+.workout-footer > span {
+  color: var(--mf-ink-muted);
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+}
+
+
+.workout-footer-arrow {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    var(--mf-border);
+
+  border-radius: 50%;
+
+  background:
+    var(--mf-white);
+
+  color:
+    var(--mf-ink);
+
+  transition:
+    all var(--mf-transition);
+}
+
+
+.workout-card:hover
+.workout-footer-arrow {
+  border-color:
+    var(--mf-mint);
+
+  background:
+    var(--mf-mint-soft);
+
+  color:
+    var(--mf-mint-dark);
+
+  transform:
+    translateX(3px);
+}
+
+
+/* ============================================================
+   16. LEVEL GRID
+   ============================================================ */
+
+.level-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+.level-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  min-height: 110px;
+
+  padding:
+    18px;
+
+  border:
+    1px solid
+    var(--mf-border);
+
+  border-radius:
+    var(--mf-radius-md);
+
+  background:
+    rgba(255, 255, 255, 0.88);
+
+  color: var(--mf-ink);
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform var(--mf-transition),
+    border-color var(--mf-transition),
+    background var(--mf-transition),
+    box-shadow var(--mf-transition);
+
+  appearance: none;
+}
+
+
+.level-card:hover {
+  transform: translateY(-3px);
+
+  border-color:
+    rgba(57, 185, 150, 0.45);
+
+  box-shadow:
+    var(--mf-shadow-sm);
+}
+
+
+.level-selected {
+  border-color:
+    var(--mf-mint-dark);
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4fffb,
+      #ffffff
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(57, 185, 150, 0.10);
+}
+
+
+/* ============================================================
+   LEVEL NUMBER
+   ============================================================ */
+
+.level-number {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 14px;
+
+  background:
+    var(--mf-mint-pale);
+
+  color:
+    var(--mf-mint-dark);
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.05em;
+}
+
+
+.level-selected .level-number {
+  background:
+    var(--mf-mint);
+
+  color:
+    var(--mf-ink);
+}
+
+
+/* ============================================================
+   LEVEL CONTENT
+   ============================================================ */
+
+.level-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.level-content h3 {
+  margin: 0;
+
+  font-size: 17px;
+
+  letter-spacing: -0.02em;
+
+  font-weight: 850;
+}
+
+
+.level-content p {
+  margin:
+    6px
+    0
+    0;
+
+  color: var(--mf-ink-muted);
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* ============================================================
+   LEVEL RADIO
+   ============================================================ */
+
+.level-radio {
+  width: 18px;
+  height: 18px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    var(--mf-border-dark);
+
+  border-radius: 50%;
+}
+
+
+.level-radio span {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background:
+    var(--mf-mint-dark);
+}
+
+
+/* ============================================================
+   17. SUMMARY
+   ============================================================ */
+
+.setup-summary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 8px;
+
+  padding:
+    18px
+    20px;
+
+  border:
+    1px solid
+    rgba(114, 230, 192, 0.35);
+
+  border-radius:
+    var(--mf-radius-md);
+
+  background:
+    linear-gradient(
+      100deg,
+      rgba(225, 250, 242, 0.80),
+      rgba(255, 255, 255, 0.92)
+    );
+
+  box-shadow:
+    var(--mf-shadow-xs);
+}
+
+
+/* ============================================================
+   SUMMARY ICON
+   ============================================================ */
+
+.summary-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 14px;
+
+  background:
+    var(--mf-mint);
+
+  color:
+    var(--mf-ink);
+}
+
+
+.summary-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  flex: 1;
+}
+
+
+.summary-content span {
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.15em;
+
+  color:
+    var(--mf-mint-dark);
+}
+
+
+.summary-content strong {
+  font-size: 15px;
+
+  font-weight: 850;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* ============================================================
+   18. ACTIONS
+   ============================================================ */
+
+.setup-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 30px;
+
+  padding-top: 28px;
+
+  border-top:
+    1px solid
+    var(--mf-border);
+}
+
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+
+.setup-back-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 48px;
+
+  padding:
+    0
+    18px;
+
+  border:
+    1px solid
+    var(--mf-border);
+
+  border-radius: 12px;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  color:
+    var(--mf-ink-soft);
+
+  font-size: 12px;
+
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    all var(--mf-transition);
+}
+
+
+.setup-back-button:hover {
+  border-color:
+    var(--mf-border-dark);
+
+  background:
+    var(--mf-white);
+
+  color:
+    var(--mf-ink);
+
+  transform:
+    translateX(-2px);
+}
+
+
+/* ============================================================
+   CONTINUE BUTTON
+   ============================================================ */
+
+.continue-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  min-width: 190px;
+
+  min-height: 56px;
+
+  padding:
+    5px
+    6px
+    5px
+    22px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    #e4ebe8;
+
+  color:
+    #8a9691;
+
+  font-size: 13px;
+
+  font-weight: 850;
+
+  cursor: not-allowed;
+
+  transition:
+    all var(--mf-transition);
+}
+
+
+.continue-active {
+  cursor: pointer;
+
+  color:
+    var(--mf-ink);
+
+  background:
+    linear-gradient(
+      100deg,
+      var(--mf-mint),
+      #b3eac7 58%,
+      var(--mf-orange)
+    );
+
+  box-shadow:
+    0 12px 30px
+    rgba(114, 230, 192, 0.20);
+}
+
+
+.continue-active:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 16px 38px
+    rgba(114, 230, 192, 0.26);
+}
+
+
+.continue-active:active {
+  transform:
+    translateY(0)
+    scale(0.985);
+}
+
+
+/* ============================================================
+   CONTINUE ARROW
+   ============================================================ */
+
+.continue-arrow {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--mf-ink);
+
+  color:
+    var(--mf-mint);
+
+  transition:
+    transform var(--mf-transition);
+}
+
+
+.continue-active:hover
+.continue-arrow {
+  transform:
+    translateX(3px);
+}
+
+
+/* ============================================================
+   19. FOOTER
+   ============================================================ */
+
+.setup-footer {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr
+    1fr;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: 65px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid
+    var(--mf-border);
+
+  color:
+    var(--mf-ink-muted);
+
+  font-size: 8px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.16em;
+}
+
+
+.setup-footer > div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+}
+
+
+.setup-footer > span:nth-child(2) {
+  text-align: center;
+}
+
+
+.setup-footer > span:last-child {
+  text-align: right;
+}
+
+
+.footer-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background:
+    var(--mf-mint-dark);
+
+  box-shadow:
+    0 0 0 4px
+    var(--mf-mint-soft);
+}
+
+
+/* ============================================================
+   20. FOCUS STATES
+   ============================================================ */
+
+.workout-card:focus-visible,
+.level-card:focus-visible,
+.setup-back-button:focus-visible,
+.continue-button:focus-visible {
+  outline:
+    3px solid
+    rgba(114, 230, 192, 0.35);
+
+  outline-offset: 4px;
+}
+
+
+/* ============================================================
+   21. SELECTION COLOR
+   ============================================================ */
+
+::selection {
+  background:
+    var(--mf-mint);
+
+  color:
+    var(--mf-ink);
+}
+
+
+/* ============================================================
+   22. SCROLLBAR
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+
+::-webkit-scrollbar-track {
+  background:
+    #f0f4f2;
+}
+
+
+::-webkit-scrollbar-thumb {
+  border:
+    2px solid
+    #f0f4f2;
+
+  border-radius:
+    999px;
+
+  background:
+    #b8c9c2;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    var(--mf-mint-dark);
+}
+
+
+/* ============================================================
+   23. TABLET
+   ============================================================ */
+
+@media (max-width: 1050px) {
+
+  .setup-container {
+    width:
+      min(
+        100% - 40px,
+        900px
+      );
+  }
+
+
+  .workout-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .workout-image-wrapper {
+    height: 310px;
+  }
+
+
+  .level-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .level-card {
+    min-height: 90px;
+  }
+
+}
+
+
+/* ============================================================
+   24. MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+  .setup-container {
+    width:
+      calc(100% - 28px);
+
+    padding-top: 18px;
+  }
+
+
+  .setup-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 20px;
+  }
+
+
+  .setup-progress {
+    width: 100%;
+  }
+
+
+  .setup-intro {
+    padding:
+      45px
+      0
+      38px;
+  }
+
+
+  .setup-intro h1 {
+    font-size:
+      clamp(
+        42px,
+        13vw,
+        62px
+      );
+  }
+
+
+  .setup-intro p {
+    font-size: 14px;
+  }
+
+
+  .section-heading {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+
+  .workout-image-wrapper {
+    height: 250px;
+  }
+
+
+  .workout-content {
+    padding:
+      20px;
+  }
+
+
+  .workout-description {
+    min-height: auto;
+  }
+
+
+  .setup-summary {
+    align-items: flex-start;
+  }
+
+
+  .setup-actions {
+    align-items: stretch;
+
+    flex-direction: column-reverse;
+  }
+
+
+  .setup-back-button {
+    justify-content: center;
+
+    width: 100%;
+  }
+
+
+  .continue-button {
+    width: 100%;
+  }
+
+
+  .setup-footer {
+    grid-template-columns:
+      1fr;
+
+    gap: 12px;
+
+    text-align: left;
+  }
+
+
+  .setup-footer > span:nth-child(2),
+  .setup-footer > span:last-child {
+    text-align: left;
+  }
+
+}
+
+
+/* ============================================================
+   25. SMALL MOBILE
+   ============================================================ */
+
+@media (max-width: 430px) {
+
+  .setup-container {
+    width:
+      calc(100% - 20px);
+  }
+
+
+  .setup-brand-name {
+    font-size: 17px;
+  }
+
+
+  .setup-brand-mark {
+    width: 42px;
+    height: 42px;
+  }
+
+
+  .workout-image-wrapper {
+    height: 220px;
+  }
+
+
+  .workout-image-title strong {
+    font-size: 21px;
+  }
+
+
+  .workout-meta {
+    gap: 12px;
+  }
+
+
+  .workout-meta-item strong {
+    font-size: 10px;
+  }
+
+
+  .level-card {
+    padding: 15px;
+  }
+
+
+  .level-number {
+    width: 42px;
+    height: 42px;
+  }
+
+}
+
+
+/* ============================================================
+   26. REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    transition-duration:
+      0.01ms !important;
+
+    animation-duration:
+      0.01ms !important;
+  }
+
+}

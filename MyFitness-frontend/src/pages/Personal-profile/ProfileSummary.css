@@ -1,0 +1,1650 @@
+/* =========================================================
+   MYFITNESS PROFILE SUMMARY
+   BRIGHT PREMIUM UI
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.summary-page {
+  position: relative;
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  padding:
+    35px
+    24px
+    30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eafff7 0%,
+      #ffffff 45%,
+      #ffffff 55%,
+      #fff0e7 100%
+    );
+
+  font-family:
+    Inter,
+    Arial,
+    sans-serif;
+
+  color: #19312b;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOWS
+   ========================================================= */
+
+.summary-mint-glow {
+  position: fixed;
+
+  width: 520px;
+  height: 520px;
+
+  left: -300px;
+  top: 120px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(62, 211, 169, 0.24),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+.summary-orange-glow {
+  position: fixed;
+
+  width: 520px;
+  height: 520px;
+
+  right: -300px;
+  bottom: -150px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 157, 120, 0.23),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.summary-header {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(100%, 620px);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    44px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 14px;
+}
+
+
+.summary-back {
+  width: 44px;
+  height: 44px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.9);
+
+  color: #253b35;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 22px rgba(30,75,63,0.08);
+
+  transition:
+    transform .25s ease;
+}
+
+
+.summary-back:hover {
+  transform: translateX(-4px);
+}
+
+
+.summary-brand {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.summary-brand span {
+  color: #28af8b;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.summary-brand strong {
+  color: #19312b;
+
+  font-size: 14px;
+
+  font-weight: 850;
+}
+
+
+.summary-step {
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 3px;
+}
+
+
+.summary-step small {
+  color: #9aa7a3;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+
+.summary-step strong {
+  color: #27b18b;
+
+  font-size: 16px;
+
+  font-weight: 900;
+}
+
+
+.summary-step span {
+  color: #a1aaa7;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   PROGRESS
+   ========================================================= */
+
+.summary-progress {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(100%, 620px);
+
+  margin:
+    30px
+    auto
+    0;
+}
+
+
+.summary-progress-line {
+  width: 100%;
+
+  height: 4px;
+
+  overflow: hidden;
+
+  border-radius: 10px;
+
+  background: #e2ebe7;
+}
+
+
+.summary-progress-line span {
+  display: block;
+
+  width: 66%;
+
+  height: 100%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2dbb95,
+      #58d2b1
+    );
+}
+
+
+.summary-progress-labels {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 8px;
+
+  color: #a1aaa7;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+
+.summary-progress-labels strong {
+  color: #26ae89;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.summary-hero {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(100%, 620px);
+
+  margin:
+    42px
+    auto
+    30px;
+
+  text-align: center;
+}
+
+
+.summary-eyebrow {
+  color: #28b08b;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+
+.summary-hero h1 {
+  margin:
+    9px
+    0
+    0;
+
+  color: #162c26;
+
+  font-size: clamp(40px, 8vw, 52px);
+
+  line-height: .95;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 900;
+}
+
+
+.summary-hero h1 em {
+  margin-left: 8px;
+
+  color: #2ebc97;
+
+  font-style: normal;
+}
+
+
+.summary-hero p {
+  max-width: 430px;
+
+  margin:
+    15px
+    auto
+    0;
+
+  color: #7d8d87;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.summary-card {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(100%, 620px);
+
+  margin: 0 auto;
+
+  padding:
+    28px
+    25px
+    24px;
+
+  overflow: hidden;
+
+  border:
+    1px solid rgba(255,255,255,0.96);
+
+  border-radius: 38px;
+
+  background:
+    rgba(255,255,255,0.91);
+
+  box-shadow:
+    0 30px 80px rgba(30,75,63,0.11),
+    0 8px 25px rgba(30,75,63,0.04);
+
+  backdrop-filter: blur(18px);
+}
+
+
+/* =========================================================
+   CARD DECORATIONS
+   ========================================================= */
+
+.card-decoration {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+.mint-decoration {
+  width: 300px;
+  height: 300px;
+
+  left: -210px;
+  top: -150px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(71,211,171,0.18),
+      transparent 70%
+    );
+}
+
+
+.orange-decoration {
+  width: 280px;
+  height: 280px;
+
+  right: -190px;
+  bottom: -130px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,157,120,0.17),
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   VISUAL
+   ========================================================= */
+
+.summary-visual {
+  position: relative;
+
+  width: 230px;
+  height: 230px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   RINGS
+   ========================================================= */
+
+.summary-ring {
+  position: absolute;
+
+  border-radius: 50%;
+}
+
+
+.ring-one {
+  width: 215px;
+  height: 215px;
+
+  border:
+    7px solid #e8f1ed;
+
+  border-top-color: #37bd9a;
+
+  border-right-color: #37bd9a;
+
+  transform:
+    rotate(-35deg);
+}
+
+
+.ring-two {
+  width: 215px;
+  height: 215px;
+
+  border:
+    7px solid transparent;
+
+  border-bottom-color: #ffad8e;
+
+  border-left-color: #ffad8e;
+
+  transform:
+    rotate(-35deg);
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.summary-avatar {
+  position: relative;
+
+  z-index: 3;
+
+  width: 137px;
+  height: 137px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e6faf3,
+      #b6eadb
+    );
+
+  box-shadow:
+    0 20px 40px rgba(40,164,130,0.15),
+    inset 0 1px 0 #ffffff;
+
+  transition:
+    transform .35s ease;
+}
+
+
+.summary-card:hover .summary-avatar {
+  transform:
+    scale(1.04)
+    rotate(-2deg);
+}
+
+
+/* Head */
+
+.avatar-head {
+  position: absolute;
+
+  top: 27px;
+  left: 50%;
+
+  width: 36px;
+  height: 39px;
+
+  transform: translateX(-50%);
+
+  border-radius:
+    48%
+    48%
+    45%
+    45%;
+
+  background:
+    #31b995;
+}
+
+
+/* Body */
+
+.avatar-body {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  width: 78px;
+  height: 59px;
+
+  transform: translateX(-50%);
+
+  border-radius:
+    42px
+    42px
+    25px
+    25px;
+
+  background:
+    #31b995;
+}
+
+
+/* =========================================================
+   READY
+   ========================================================= */
+
+.ready-badge {
+  position: absolute;
+
+  z-index: 10;
+
+  right: -8px;
+  bottom: 27px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding:
+    7px
+    12px
+    7px
+    7px;
+
+  border-radius: 50px;
+
+  background:
+    rgba(235,252,245,0.98);
+
+  color: #178f70;
+
+  font-size: 8px;
+
+  font-weight: 900;
+
+  letter-spacing: .8px;
+
+  box-shadow:
+    0 8px 20px rgba(35,170,132,0.14);
+}
+
+
+.ready-badge span {
+  width: 21px;
+  height: 21px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: white;
+
+  background: #31bd98;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   PROFILE TITLE
+   ========================================================= */
+
+.profile-title {
+  position: relative;
+
+  z-index: 4;
+
+  margin-top: 10px;
+
+  text-align: center;
+}
+
+
+.profile-title > span {
+  color: #28ae89;
+
+  font-size: 7px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+
+.profile-title h2 {
+  margin:
+    6px
+    0
+    0;
+
+  color: #172c27;
+
+  font-size: 26px;
+
+  font-weight: 900;
+
+  letter-spacing: -.9px;
+}
+
+
+.profile-title p {
+  margin:
+    6px
+    0
+    0;
+
+  color: #87948f;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   DETAILS
+   ========================================================= */
+
+.profile-details {
+  position: relative;
+
+  z-index: 4;
+
+  margin-top: 23px;
+
+  border-top:
+    1px solid #edf1ef;
+}
+
+
+.detail-row {
+  min-height: 67px;
+
+  display: grid;
+
+  grid-template-columns:
+    40px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 12px;
+
+  border-bottom:
+    1px solid #edf1ef;
+}
+
+
+.detail-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  font-size: 8px;
+
+  font-weight: 900;
+}
+
+
+.detail-icon.mint {
+  color: #1ca982;
+
+  background: #e6f9f2;
+}
+
+
+.detail-icon.orange {
+  color: #e97855;
+
+  background: #fff0e8;
+}
+
+
+.detail-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+.detail-text strong {
+  color: #263a34;
+
+  font-size: 10px;
+
+  font-weight: 850;
+}
+
+
+.detail-text small {
+  color: #9aa6a2;
+
+  font-size: 7px;
+}
+
+
+.detail-value {
+  color: #1f342e;
+
+  font-size: 13px;
+
+  font-weight: 900;
+
+  text-align: right;
+}
+
+
+.detail-value small {
+  margin-left: 3px;
+
+  color: #8c9994;
+
+  font-size: 7px;
+
+  font-weight: 700;
+}
+
+
+.gender-value {
+  color: #e87957;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.summary-message {
+  position: relative;
+
+  z-index: 4;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #edfcf6,
+      #f7fffb
+    );
+
+  border:
+    1px solid rgba(47,189,152,0.07);
+}
+
+
+.message-symbol {
+  width: 40px;
+  height: 40px;
+
+  flex: 0 0 auto;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  color: #21ad87;
+
+  background: #dff7ec;
+
+  font-size: 18px;
+}
+
+
+.summary-message strong {
+  color: #263f37;
+
+  font-size: 10px;
+
+  font-weight: 900;
+}
+
+
+.summary-message p {
+  margin: 4px 0 0;
+
+  color: #7b8c85;
+
+  font-size: 8px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+   ========================================================= */
+
+.summary-continue {
+  position: relative;
+
+  z-index: 4;
+
+  width: 100%;
+
+  height: 54px;
+
+  margin-top: 16px;
+
+  padding:
+    6px
+    7px
+    6px
+    21px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: none;
+
+  border-radius: 50px;
+
+  cursor: pointer;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      100deg,
+      #2fbd98,
+      #49cba8
+    );
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+  box-shadow:
+    0 13px 28px rgba(47,189,152,0.22);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.summary-continue:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 17px 34px rgba(47,189,152,0.28);
+}
+
+
+.summary-continue > div {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #27ae88;
+
+  background: #ffffff;
+
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.summary-footer {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(100%, 620px);
+
+  margin: 27px auto 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  color: #9aa5a2;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+
+.summary-footer > span {
+  color: #667771;
+}
+
+
+.summary-footer div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+.summary-footer i {
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #2bb390;
+}
+
+
+.summary-footer strong {
+  color: #65756f;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .summary-page {
+    padding:
+      25px
+      16px
+      25px;
+  }
+
+
+  .summary-card {
+    padding:
+      24px
+      18px
+      20px;
+
+    border-radius: 31px;
+  }
+
+
+  .summary-hero {
+    margin-top: 35px;
+  }
+
+
+  .summary-hero h1 {
+    font-size: 39px;
+  }
+
+
+  .summary-visual {
+    width: 210px;
+    height: 210px;
+  }
+
+
+  .ring-one,
+  .ring-two {
+    width: 195px;
+    height: 195px;
+  }
+
+
+  .summary-avatar {
+    width: 125px;
+    height: 125px;
+  }
+
+
+  .ready-badge {
+    right: -5px;
+    bottom: 22px;
+  }
+
+
+  .detail-row {
+    min-height: 62px;
+  }
+
+
+  .detail-text small {
+    display: none;
+  }
+
+
+  .summary-footer div {
+    display: none;
+  }
+
+}
+/* =========================================================
+   PREMIUM POLISH V2
+   ========================================================= */
+
+/* Main card more premium */
+.summary-card {
+  border: 1px solid rgba(255, 255, 255, 0.98);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.96),
+      rgba(255,255,255,0.86)
+    );
+
+  box-shadow:
+    0 35px 90px rgba(28, 82, 68, 0.12),
+    0 12px 30px rgba(28, 82, 68, 0.055),
+    inset 0 1px 0 rgba(255,255,255,1);
+
+  backdrop-filter: blur(24px);
+}
+
+
+/* More visible mint glow */
+.summary-mint-glow {
+  width: 620px;
+  height: 620px;
+
+  left: -350px;
+  top: 80px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(55, 215, 171, 0.28),
+      rgba(55, 215, 171, 0.08) 35%,
+      transparent 70%
+    );
+}
+
+
+/* More visible cantaloupe glow */
+.summary-orange-glow {
+  width: 620px;
+  height: 620px;
+
+  right: -350px;
+  bottom: -180px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 157, 120, 0.27),
+      rgba(255, 157, 120, 0.07) 35%,
+      transparent 70%
+    );
+}
+
+
+/* =========================================================
+   PROFILE VISUAL UPGRADE
+   ========================================================= */
+
+.summary-visual {
+  transform: scale(1.04);
+}
+
+
+/* brighter ring */
+.ring-one {
+  border-top-color: #35c8a0;
+  border-right-color: #35c8a0;
+
+  box-shadow:
+    0 0 18px rgba(53,200,160,0.13);
+}
+
+
+.ring-two {
+  border-bottom-color: #ff9f7b;
+  border-left-color: #ff9f7b;
+
+  box-shadow:
+    0 0 18px rgba(255,159,123,0.12);
+}
+
+
+/* avatar gets more depth */
+.summary-avatar {
+  background:
+    radial-gradient(
+      circle at 30% 25%,
+      #f5fffb 0%,
+      #dff9f0 35%,
+      #b1e9d8 100%
+    );
+
+  box-shadow:
+    0 24px 48px rgba(40,164,130,0.18),
+    0 0 0 8px rgba(255,255,255,0.5),
+    inset 0 2px 0 rgba(255,255,255,1);
+}
+
+
+/* avatar highlight */
+.summary-avatar::before {
+  content: "";
+
+  position: absolute;
+
+  width: 42px;
+  height: 20px;
+
+  top: 18px;
+  left: 22px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.42);
+
+  filter: blur(4px);
+
+  transform: rotate(-25deg);
+}
+
+
+/* =========================================================
+   READY BADGE
+   ========================================================= */
+
+.ready-badge {
+  padding:
+    8px
+    14px
+    8px
+    8px;
+
+  font-size: 9px;
+
+  letter-spacing: 1px;
+
+  border:
+    1px solid rgba(47,189,152,0.12);
+
+  box-shadow:
+    0 12px 26px rgba(35,170,132,0.16),
+    0 0 0 4px rgba(255,255,255,0.55);
+}
+
+
+.ready-badge span {
+  width: 23px;
+  height: 23px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #35c7a1,
+      #22ac88
+    );
+
+  box-shadow:
+    0 5px 12px rgba(35,174,136,0.22);
+}
+
+
+/* =========================================================
+   PROFILE TITLE
+   ========================================================= */
+
+.profile-title h2 {
+  font-size: 29px;
+
+  letter-spacing: -1px;
+}
+
+
+.profile-title p {
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   DETAILS — FONT SIZE INCREASE
+   ========================================================= */
+
+.detail-row {
+  min-height: 73px;
+
+  grid-template-columns:
+    45px
+    1fr
+    auto;
+
+  gap: 13px;
+}
+
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 13px;
+
+  font-size: 9px;
+}
+
+
+.detail-text strong {
+  font-size: 12px;
+
+  letter-spacing: -0.1px;
+}
+
+
+.detail-text small {
+  font-size: 8px;
+
+  margin-top: 1px;
+}
+
+
+.detail-value {
+  font-size: 15px;
+
+  letter-spacing: -0.3px;
+}
+
+
+.detail-value small {
+  font-size: 8px;
+
+  margin-left: 4px;
+}
+
+
+/* Gender slightly bigger */
+.gender-value {
+  font-size: 15px;
+
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   DETAIL ROW HOVER
+   ========================================================= */
+
+.detail-row {
+  padding-left: 4px;
+  padding-right: 4px;
+
+  border-radius: 14px;
+
+  transition:
+    background .25s ease,
+    transform .25s ease;
+}
+
+
+.detail-row:hover {
+  background:
+    rgba(242,250,247,0.72);
+
+  transform:
+    translateX(3px);
+}
+
+
+.detail-row:hover .detail-icon {
+  transform:
+    scale(1.06);
+}
+
+
+.detail-icon {
+  transition:
+    transform .25s ease;
+}
+
+
+/* =========================================================
+   MESSAGE MORE ATTRACTIVE
+   ========================================================= */
+
+.summary-message {
+  margin-top: 22px;
+
+  padding: 17px;
+
+  border:
+    1px solid rgba(47,189,152,0.10);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(228,250,242,0.95),
+      rgba(248,255,251,0.95)
+    );
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+
+.message-symbol {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #d9f7eb,
+      #c3efdf
+    );
+
+  box-shadow:
+    0 8px 18px rgba(35,174,136,0.10);
+}
+
+
+.summary-message strong {
+  font-size: 11px;
+}
+
+
+.summary-message p {
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   CONTINUE BUTTON
+   ========================================================= */
+
+.summary-continue {
+  height: 58px;
+
+  margin-top: 18px;
+
+  padding-left: 23px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #2bb995 0%,
+      #38c5a1 52%,
+      #4bcbaa 100%
+    );
+
+  box-shadow:
+    0 16px 32px rgba(42,186,149,0.24),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  font-size: 11px;
+}
+
+
+.summary-continue:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 21px 40px rgba(42,186,149,0.30);
+}
+
+
+.summary-continue > div {
+  width: 45px;
+  height: 45px;
+
+  box-shadow:
+    0 5px 15px rgba(28,110,88,0.10);
+
+  transition:
+    transform .25s ease;
+}
+
+
+.summary-continue:hover > div {
+  transform:
+    translateX(3px);
+}
+
+
+/* =========================================================
+   HERO POLISH
+   ========================================================= */
+
+.summary-hero h1 {
+  text-shadow:
+    0 4px 20px rgba(38,82,69,0.04);
+}
+
+
+.summary-hero h1 em {
+  position: relative;
+}
+
+
+.summary-hero h1 em::after {
+  content: "";
+
+  position: absolute;
+
+  left: 3px;
+  right: 2px;
+  bottom: -5px;
+
+  height: 3px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #42c9a5,
+      #8ce2c9
+    );
+
+  opacity: .55;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.summary-footer {
+  margin-top: 31px;
+
+  opacity: .9;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .summary-visual {
+    transform: scale(1.01);
+  }
+
+  .detail-row {
+    min-height: 68px;
+  }
+
+  .detail-text strong {
+    font-size: 11px;
+  }
+
+  .detail-value {
+    font-size: 14px;
+  }
+
+  .gender-value {
+    font-size: 14px;
+  }
+
+}
+/* =========================================================
+   PROFILE DETAILS - TYPOGRAPHY UPGRADE
+   ========================================================= */
+
+/* Age / Height / Weight / Gender */
+.detail-text strong {
+  font-size: 14px;
+  font-weight: 850;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+
+/* Current age / Body height / Current weight / Selected profile */
+.detail-text small {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: 0.05px;
+}
+
+
+/* 21 / 175 / 70 / Male */
+.detail-value {
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: -0.35px;
+}
+
+
+/* years / cm / kg */
+.detail-value small {
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* Gender value */
+.gender-value {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+
+/* Give each row a little more breathing space */
+.detail-row {
+  min-height: 78px;
+}
+
+
+/* Slightly larger icons to balance the typography */
+.detail-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+}
+
+
+/* Mobile */
+@media (max-width: 600px) {
+
+  .detail-row {
+    min-height: 72px;
+  }
+
+  .detail-text strong {
+    font-size: 13px;
+  }
+
+  .detail-text small {
+    font-size: 9px;
+  }
+
+  .detail-value {
+    font-size: 15px;
+  }
+
+  .gender-value {
+    font-size: 15px;
+  }
+
+}

@@ -1,0 +1,2131 @@
+/* =========================================================
+   MYFITNESS LOGIN
+   EXACT REFERENCE STRUCTURE
+   THEME:
+   Mint Green + Cantaloupe Orange
+========================================================= */
+
+
+/* =========================================================
+   COLORS
+========================================================= */
+
+:root {
+
+  --mint: #8FF5CF;
+  --mint-bright: #A7FFD9;
+  --mint-dark: #4DDBAD;
+
+  --orange: #FF9F7A;
+  --orange-bright: #FFB59B;
+  --orange-dark: #F27B57;
+
+  --black: #030605;
+  --black-soft: #07100D;
+
+  --white: #FFFFFF;
+  --white-soft: #E9EEEC;
+
+  --gray: #A7AFAC;
+  --gray-dark: #68736F;
+
+  --border: rgba(255,255,255,.15);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+
+body {
+
+  margin: 0;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+}
+
+
+/* =========================================================
+   MAIN PAGE
+========================================================= */
+
+.login-page {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 1180px;
+
+  height: auto;
+
+  overflow-x: hidden;
+
+  overflow-y: auto;
+
+  padding-bottom: 150px;
+
+  background: var(--black);
+
+  scroll-behavior: smooth;
+}
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.login-background {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+}
+
+
+/* =========================================================
+   ACTUAL MALE GYM IMAGE
+========================================================= */
+
+.login-hero-image {
+
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+}
+
+
+/* =========================================================
+   DARK OVERLAY
+========================================================= */
+
+.image-dark-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    rgba(0,0,0,.18);
+
+}
+
+
+/* =========================================================
+   LEFT IMAGE OVERLAY
+========================================================= */
+
+.image-left-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.82) 0%,
+      rgba(0,0,0,.60) 18%,
+      rgba(0,0,0,.20) 42%,
+      transparent 58%
+    );
+
+}
+
+
+/* =========================================================
+   RIGHT OVERLAY
+========================================================= */
+
+.image-right-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent 35%,
+      rgba(0,0,0,.20) 50%,
+      rgba(2,7,5,.72) 72%,
+      rgba(2,5,4,.97) 100%
+    );
+
+}
+
+
+/* =========================================================
+   BOTTOM OVERLAY
+========================================================= */
+
+.image-bottom-overlay {
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.35),
+      transparent 25%,
+      transparent 65%,
+      rgba(0,0,0,.95)
+    );
+
+}
+
+
+/* =========================================================
+   AMBIENT MINT
+========================================================= */
+
+.mint-glow {
+
+  position: absolute;
+
+  z-index: 2;
+
+  width: 500px;
+
+  height: 500px;
+
+  left: -220px;
+
+  top: 25%;
+
+  border-radius: 50%;
+
+  background: var(--mint);
+
+  opacity: .06;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+}
+
+
+/* =========================================================
+   AMBIENT ORANGE
+========================================================= */
+
+.orange-glow {
+
+  position: absolute;
+
+  z-index: 2;
+
+  width: 450px;
+
+  height: 450px;
+
+  right: -180px;
+
+  bottom: -150px;
+
+  border-radius: 50%;
+
+  background: var(--orange);
+
+  opacity: .06;
+
+  filter: blur(120px);
+
+  pointer-events: none;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.login-header {
+
+  position: absolute;
+
+  z-index: 50;
+
+  top: 42px;
+
+  left: 2.6%;
+
+  right: 2.6%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.mf-logo {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+/* =========================================================
+   LOGO SYMBOL
+========================================================= */
+
+.mf-logo-symbol {
+  position: relative;
+  width: 46px;
+  height: 46px;
+
+  display: block;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  border: none;
+  outline: none;
+}
+
+
+
+
+
+/* =========================================================
+   LOGO TEXT
+========================================================= */
+
+.mf-logo-text {
+
+  font-size: 27px;
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  color: white;
+
+}
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+.language-container {
+
+  position: relative;
+
+}
+
+
+.language-button {
+
+  min-width: 170px;
+
+  height: 55px;
+
+  padding: 0 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.16);
+
+  border-radius: 30px;
+
+  background:
+
+    rgba(10,18,15,.50);
+
+  backdrop-filter: blur(15px);
+
+  color: white;
+
+  font-size: 16px;
+
+  cursor: pointer;
+
+}
+
+
+.language-button svg {
+
+  width: 23px;
+
+  height: 23px;
+
+  color: var(--mint);
+
+}
+
+
+.language-arrow {
+
+  color: var(--gray);
+
+  font-size: 20px;
+
+}
+
+
+/* =========================================================
+   LANGUAGE DROPDOWN
+========================================================= */
+
+.language-dropdown {
+
+  position: absolute;
+
+  right: 0;
+
+  top: 62px;
+
+  width: 170px;
+
+  padding: 7px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.15);
+
+  border-radius: 16px;
+
+  background:
+
+    rgba(5,12,9,.95);
+
+  backdrop-filter: blur(20px);
+
+}
+
+
+.language-dropdown button {
+
+  width: 100%;
+
+  padding: 11px;
+
+  border: 0;
+
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: var(--gray);
+
+  text-align: left;
+
+  cursor: pointer;
+
+}
+
+
+.language-dropdown button:hover {
+
+  color: var(--mint);
+
+  background:
+
+    rgba(143,245,207,.07);
+
+}
+
+
+/* =========================================================
+   LEFT PANEL
+========================================================= */
+
+.left-panel {
+
+  position: absolute;
+
+  z-index: 20;
+
+  left: 2.6%;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 36%;
+
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.left-eyebrow {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 23px;
+
+  color: var(--mint);
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+}
+
+
+.left-eyebrow span {
+
+  width: 38px;
+
+  height: 2px;
+
+  background: var(--mint);
+
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.left-panel h1 {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0;
+
+  font-size:
+
+    clamp(48px, 5vw, 76px);
+
+  line-height: .96;
+
+  letter-spacing: -2px;
+
+  font-weight: 950;
+
+  color: white;
+
+}
+
+
+.left-panel h1 .mint-text {
+
+  color: var(--mint);
+
+}
+
+
+/* =========================================================
+   LEFT LINE
+========================================================= */
+
+.left-line {
+
+  display: flex;
+
+  gap: 4px;
+
+  margin-top: 33px;
+
+}
+
+
+.left-line span {
+
+  width: 62px;
+
+  height: 3px;
+
+  border-radius: 5px;
+
+  background: var(--mint);
+
+}
+
+
+.left-line b {
+
+  width: 22px;
+
+  height: 3px;
+
+  border-radius: 5px;
+
+  background: var(--orange);
+
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.left-panel p {
+
+  margin-top: 29px;
+
+  color: var(--white-soft);
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+}
+
+
+.left-panel p strong {
+
+  color: var(--orange);
+
+}
+
+
+/* =========================================================
+   AI CARD
+========================================================= */
+
+.ai-powered-card {
+  position: relative;
+
+  width: 290px;
+  min-height: 92px;
+
+  margin-top: 42px;
+
+  padding: 16px 20px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  border: 1px solid rgba(143, 245, 207, 0.28);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(7, 20, 15, 0.88),
+      rgba(5, 12, 9, 0.72)
+    );
+
+  backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  z-index: 25;
+}
+
+
+/* =========================================================
+   AI ICON
+========================================================= */
+
+.ai-icon {
+
+  width: 57px;
+
+  height: 57px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+
+    1px solid
+    rgba(143,245,207,.35);
+
+  border-radius: 50%;
+
+  color: var(--mint);
+
+}
+
+
+.ai-brain {
+
+  font-size: 12px;
+
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   AI TEXT
+========================================================= */
+
+.ai-powered-card strong {
+
+  display: block;
+
+  color: var(--mint);
+
+  font-size: 14px;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+.ai-powered-card span {
+
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--white-soft);
+
+  font-size: 13px;
+
+}
+
+
+/* =========================================================
+   LOGIN CARD
+========================================================= */
+
+.login-card {
+
+  position: absolute;
+
+  z-index: 30;
+
+  top: 4%;
+
+  right: 2.5%;
+
+  bottom: 9%;
+
+  width: min(555px, 43vw);
+
+  overflow: hidden;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.17);
+
+  border-radius: 38px;
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(17,30,25,.88),
+      rgba(4,9,7,.90)
+    );
+
+  backdrop-filter: blur(25px);
+
+  box-shadow:
+
+    0 35px 90px
+    rgba(0,0,0,.60),
+
+    inset 0 1px 0
+    rgba(255,255,255,.08);
+
+}
+
+
+/* =========================================================
+   TOP MINT EDGE
+========================================================= */
+
+.login-card::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 45%;
+
+  height: 1px;
+
+  background:
+
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--mint),
+      transparent
+    );
+
+}
+
+
+/* =========================================================
+   ORANGE SIDE EDGE
+========================================================= */
+
+.login-card::after {
+
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+
+  bottom: 12%;
+
+  width: 1px;
+
+  height: 30%;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      transparent,
+      var(--orange),
+      transparent
+    );
+
+}
+
+
+/* =========================================================
+   CARD GLOW
+========================================================= */
+
+.card-glow {
+
+  position: absolute;
+
+  width: 300px;
+
+  height: 300px;
+
+  right: -150px;
+
+  top: -150px;
+
+  border-radius: 50%;
+
+  background: var(--mint);
+
+  opacity: .05;
+
+  filter: blur(80px);
+
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.card-content {
+
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  padding: 48px 57px 28px;
+
+}
+
+
+/* =========================================================
+   WELCOME
+========================================================= */
+
+.welcome-text {
+
+  color: var(--mint);
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  margin-bottom: 15px;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.login-card h2 {
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-size:
+
+    clamp(45px, 4vw, 62px);
+
+  line-height: 1.04;
+
+  letter-spacing: -2.5px;
+
+  font-weight: 900;
+
+}
+
+
+.login-card h2 span {
+
+  color: var(--mint);
+
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.subtitle {
+
+  margin-top: 18px;
+
+  color: var(--gray);
+
+  font-size: 20px;
+
+}
+
+
+/* =========================================================
+   LOGIN / SIGNUP
+========================================================= */
+
+.auth-switch {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  height: 58px;
+
+  margin-top: 25px;
+
+  padding: 2px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.09);
+
+  border-radius: 17px;
+
+  background:
+
+    rgba(0,0,0,.16);
+
+}
+
+
+.switch-button {
+
+  border: 0;
+
+  border-radius: 14px;
+
+  background: transparent;
+
+  color: var(--gray);
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+
+.switch-button:hover {
+
+  color: white;
+
+}
+
+
+.switch-button.active {
+
+  color: var(--mint);
+
+  background:
+
+    rgba(143,245,207,.04);
+
+  box-shadow:
+
+    inset 0 0 0 1.5px var(--mint);
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.login-form {
+
+  margin-top: 24px;
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.input-box {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 21px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.24);
+
+  border-radius: 20px;
+
+  background:
+
+    rgba(0,0,0,.14);
+
+}
+
+
+.input-box:focus-within {
+
+  border-color: var(--mint);
+
+  box-shadow:
+
+    0 0 0 3px
+    rgba(143,245,207,.06);
+
+}
+
+
+.input-icon {
+
+  width: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: var(--gray);
+
+}
+
+
+.input-icon svg {
+
+  width: 24px;
+
+  height: 24px;
+
+}
+
+
+.input-box input {
+
+  width: 100%;
+
+  height: 100%;
+
+  border: 0;
+
+  outline: 0;
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 17px;
+
+  padding-right: 12px;
+
+}
+
+
+.input-box input::placeholder {
+
+  color:
+
+    rgba(190,198,195,.70);
+
+}
+
+
+/* =========================================================
+   EYE
+========================================================= */
+
+.eye-button {
+
+  width: 57px;
+
+  height: 100%;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--white-soft);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  cursor: pointer;
+
+}
+
+
+.eye-button:hover {
+
+  color: var(--mint);
+
+}
+
+
+.eye-button svg {
+
+  width: 25px;
+
+  height: 25px;
+
+}
+
+
+/* =========================================================
+   FORGOT
+========================================================= */
+
+.forgot-row {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: -7px;
+
+  margin-bottom: 23px;
+
+}
+
+
+.forgot-row button {
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--orange);
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+}
+
+
+.forgot-row button:hover {
+
+  color: var(--orange-bright);
+
+  text-decoration: underline;
+
+}
+
+
+/* =========================================================
+   MAIN LOGIN BUTTON
+========================================================= */
+
+.login-button {
+
+  width: 100%;
+
+  height: 78px;
+
+  padding-left: 29px;
+
+  padding-right: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border: 0;
+
+  border-radius: 22px;
+
+  background:
+
+    linear-gradient(
+      105deg,
+      var(--mint) 0%,
+      #70E9B7 53%,
+      var(--orange) 100%
+    );
+
+  color: #07100C;
+
+  font-size: 20px;
+
+  font-weight: 850;
+
+  cursor: pointer;
+
+  box-shadow:
+
+    0 15px 35px
+    rgba(143,245,207,.14);
+
+  transition: .25s ease;
+
+}
+
+
+.login-button:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+
+    0 20px 45px
+    rgba(143,245,207,.23);
+
+}
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.login-arrow {
+
+  width: 52px;
+
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+
+    rgba(3,8,6,.92);
+
+  color: var(--mint);
+
+}
+
+
+.login-arrow svg {
+
+  width: 25px;
+
+  height: 25px;
+
+}
+
+
+/* =========================================================
+   MESSAGE
+========================================================= */
+
+.login-message {
+
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 11px 15px;
+
+  border-radius: 13px;
+
+  border: 1px solid
+    rgba(143, 245, 207, 0.20);
+
+  background:
+    rgba(143, 245, 207, 0.05);
+
+  color: var(--mint);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  animation:
+    messageAppear 0.25s ease-out;
+
+}
+
+
+@keyframes messageAppear {
+
+  from {
+
+    opacity: 0;
+
+    transform:
+      translateY(-5px);
+
+  }
+
+  to {
+
+    opacity: 1;
+
+    transform:
+      translateY(0);
+
+  }
+
+}
+/* =========================================================
+   OR
+========================================================= */
+
+.or-section {
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin:
+
+    23px 0 17px;
+
+}
+
+
+.or-section span {
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+
+    rgba(255,255,255,.13);
+
+}
+
+
+.or-section p {
+
+  color: var(--gray);
+
+  font-size: 14px;
+
+}
+
+
+/* =========================================================
+   SOCIAL BUTTONS
+========================================================= */
+
+.social-login {
+
+  width: 100%;
+
+  height: 61px;
+
+  margin-bottom: 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 24px;
+
+  padding-left: 24px;
+
+  border:
+
+    1px solid
+    rgba(255,255,255,.14);
+
+  border-radius: 18px;
+
+  background:
+
+    rgba(0,0,0,.12);
+
+  color: white;
+
+  font-size: 16px;
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+  transition: .25s ease;
+
+}
+
+
+.social-login:hover {
+
+  border-color:
+
+    rgba(143,245,207,.40);
+
+  background:
+
+    rgba(143,245,207,.04);
+
+  transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   SOCIAL ICON
+========================================================= */
+
+.social-icon {
+
+  width: 26px;
+
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+}
+
+
+.social-icon svg {
+
+  width: 25px;
+
+  height: 25px;
+
+}
+
+
+.social-icon.phone {
+
+  color: white;
+
+}
+
+
+.social-icon.apple {
+
+  color: white;
+
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.secure-text {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 15px;
+
+  color: var(--gray);
+
+  font-size: 14px;
+
+}
+
+
+.secure-text svg {
+
+  width: 22px;
+
+  height: 22px;
+
+  color: var(--mint);
+
+}
+
+
+.secure-text strong {
+
+  color: var(--mint);
+
+}
+
+
+/* =========================================================
+   SIGNUP VIEW
+========================================================= */
+
+.signup-view {
+
+  text-align: center;
+
+  padding-top: 45px;
+
+}
+
+
+.signup-symbol {
+
+  width: 70px;
+
+  height: 70px;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+
+    1px solid
+    var(--mint);
+
+  border-radius: 50%;
+
+  color: var(--mint);
+
+  font-size: 30px;
+
+}
+
+
+.signup-view h3 {
+
+  margin-top: 20px;
+
+  font-size: 26px;
+
+}
+
+
+.signup-view p {
+
+  margin-top: 10px;
+
+  color: var(--gray);
+
+}
+
+
+.signup-view button {
+
+  margin-top: 25px;
+
+  padding: 13px 24px;
+
+  border: 1px solid var(--mint);
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: var(--mint);
+
+  cursor: pointer;
+
+}
+
+
+/* =========================================================
+   BOTTOM STATS
+========================================================= */
+
+.stats-bar {
+  position: absolute;
+
+  z-index: 30;
+
+  left: 6%;
+
+  bottom: 45px;
+
+  width: 56%;
+
+  min-height: 118px;
+
+  padding: 18px 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1px
+    1fr
+    1px
+    1fr;
+
+  align-items: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.15);
+
+  border-radius: 28px;
+
+  background:
+    rgba(4, 11, 8, 0.86);
+
+  backdrop-filter: blur(22px);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   STAT
+========================================================= */
+
+.stat {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+}
+
+
+.stat-circle {
+
+  width: 52px;
+
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 22px;
+
+}
+
+
+.stat-circle.mint {
+
+  color: var(--mint);
+
+  border:
+
+    1px solid
+    rgba(143,245,207,.22);
+
+  background:
+
+    rgba(143,245,207,.04);
+
+}
+
+
+.stat-circle.orange {
+
+  color: var(--orange);
+
+  border:
+
+    1px solid
+    rgba(255,159,122,.22);
+
+  background:
+
+    rgba(255,159,122,.04);
+
+}
+
+
+.stat strong {
+
+  display: block;
+
+  color: white;
+
+  font-size: 21px;
+
+}
+
+
+.stat p {
+
+  margin-top: 4px;
+
+  color: var(--gray);
+
+  font-size: 14px;
+
+}
+
+
+.stat-divider {
+
+  width: 1px;
+
+  height: 52px;
+
+  background:
+
+    rgba(255,255,255,.14);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1400px) {
+
+  .login-card {
+
+    width: 47vw;
+
+  }
+
+  .card-content {
+
+    padding: 38px 44px 24px;
+
+  }
+
+  .login-card h2 {
+
+    font-size: 48px;
+
+  }
+
+  .input-box {
+
+    height: 60px;
+
+    margin-bottom: 15px;
+
+  }
+
+  .login-button {
+
+    height: 66px;
+
+  }
+
+  .social-login {
+
+    height: 53px;
+
+  }
+
+  .stats-bar {
+
+    bottom: 1.8%;
+
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .left-panel {
+
+    display: none;
+
+  }
+
+  .login-card {
+
+    width: 570px;
+
+    max-width: calc(100% - 40px);
+
+    right: 50%;
+
+    transform: translateX(50%);
+
+    top: 100px;
+
+    bottom: 100px;
+
+  }
+
+  .stats-bar {
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(570px, calc(100% - 40px));
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .login-page {
+
+    height: auto;
+
+    min-height: 100vh;
+
+    overflow-y: auto;
+
+  }
+
+
+  .login-header {
+
+    top: 20px;
+
+    left: 18px;
+
+    right: 18px;
+
+  }
+
+
+  .mf-logo-text {
+
+    font-size: 20px;
+
+  }
+
+
+  .mf-logo-symbol {
+
+    width: 37px;
+
+    height: 37px;
+
+  }
+
+
+  .language-button {
+
+    min-width: auto;
+
+    height: 44px;
+
+    padding: 0 12px;
+
+    font-size: 13px;
+
+  }
+
+
+  .login-card {
+
+    position: relative;
+
+    top: auto;
+
+    right: auto;
+
+    bottom: auto;
+
+    transform: none;
+
+    width: calc(100% - 22px);
+
+    max-width: none;
+
+    margin:
+
+      90px auto 120px;
+
+    border-radius: 27px;
+
+  }
+
+
+  .card-content {
+
+    height: auto;
+
+    padding: 30px 18px 25px;
+
+  }
+
+
+  .login-card h2 {
+
+    font-size: 40px;
+
+  }
+
+
+  .subtitle {
+
+    font-size: 16px;
+
+  }
+
+
+  .input-box {
+
+    height: 59px;
+
+    border-radius: 16px;
+
+  }
+
+
+  .input-box input {
+
+    font-size: 14px;
+
+  }
+
+
+  .login-button {
+
+    height: 62px;
+
+    border-radius: 17px;
+
+    font-size: 17px;
+
+  }
+
+
+  .social-login {
+
+    height: 56px;
+
+    border-radius: 16px;
+
+    font-size: 14px;
+
+  }
+
+
+  .stats-bar {
+
+    position: relative;
+
+    left: auto;
+
+    bottom: auto;
+
+    transform: none;
+
+    width: calc(100% - 22px);
+
+    margin:
+
+      -90px auto 25px;
+
+    padding: 15px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+  }
+
+
+  .stat {
+
+    width: 100%;
+
+    justify-content: center;
+
+  }
+
+
+  .stat-divider {
+
+    width: 80%;
+
+    height: 1px;
+
+  }
+
+}
+/* =========================================================
+   MORE OPTIONS SCROLL BUTTON
+========================================================= */
+
+.scroll-cue {
+  position: absolute;
+
+  z-index: 60;
+
+  right: 3.2%;
+
+  top: 48%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 9px 9px 15px;
+
+  border: 1px solid
+    rgba(143, 245, 207, 0.30);
+
+  border-radius: 30px;
+
+  background:
+    rgba(4, 11, 8, 0.78);
+
+  backdrop-filter: blur(16px);
+
+  color: var(--mint);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
